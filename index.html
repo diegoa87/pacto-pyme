@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pacto Pyme &mdash; Si las pymes crecen, Chile crece</title>
+<meta name="description" content="Empresas, gremios, sociedad civil e instituciones p&uacute;blicas unidas para que las pymes de Chile vendan m&aacute;s, gasten menos y operen mejor. Formaci&oacute;n gratuita en seis ciudades. Empresa fundadora: Abastible.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#0033A0; --azul-hover:#002478; --azul-tint:#EDF1FB;
+  --rojo:#DA291C; --rojo-hover:#B71F14;
+  --tinta:#101014; --gris:#F4F5F9; --rule:#E1E4EF; --gris-txt:#565A6B;
+  --display:"Fraunces",Georgia,serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --pad:clamp(20px,5vw,84px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--tinta);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;letter-spacing:-.02em;line-height:1.04}
+p{margin:0} a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+section{padding:clamp(58px,8vw,110px) 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--rojo)}
+.h-sec{font-size:clamp(30px,4.1vw,50px);margin-top:14px;text-wrap:balance;color:var(--azul)}
+.sec-lede{color:var(--gris-txt);margin-top:18px;max-width:46ch}
+.nota{font-family:var(--mono);font-size:11.5px;color:#7B7F8E;margin-top:24px;line-height:1.8;max-width:72ch}
+:focus-visible{outline:3px solid var(--rojo);outline-offset:3px}
+
+.btn{font-family:var(--body);font-weight:600;font-size:14.5px;background:var(--rojo);color:#fff;border:0;border-radius:2px;padding:12px 22px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .18s ease,transform .18s ease}
+.btn:hover{background:var(--rojo-hover);transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--azul);border:1.5px solid var(--azul)}
+.btn--ghost:hover{background:var(--azul);color:#fff}
+.btn--white{background:#fff;color:var(--azul)}
+.btn--white:hover{background:#EDF1FB}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav-in{display:flex;align-items:center;gap:16px;padding:12px var(--pad);max-width:1160px;margin:0 auto}
+.mark{display:flex;align-items:center;gap:11px;text-decoration:none}
+.mark .wm{font-family:var(--body);font-weight:700;font-size:19px;letter-spacing:-.02em;line-height:.95;display:flex;flex-direction:column;text-transform:uppercase;color:var(--azul)}
+.mark .wm span{font-weight:400;letter-spacing:.2em;font-size:10.5px;color:var(--rojo)}
+.nav-tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#8B8FA0;margin-left:auto;display:none}
+@media(min-width:1000px){.nav-tag{display:block}}
+.nav .btn{margin-left:auto}
+@media(min-width:1000px){.nav .btn{margin-left:0}}
+
+/* HERO */
+.hero{background:var(--azul);color:#fff;position:relative;overflow:hidden;padding-bottom:clamp(46px,6vw,80px)}
+.hero-star{position:absolute;right:-70px;top:-40px;opacity:.07;pointer-events:none}
+.hero .eyebrow{color:#9FB6E8}
+.hero h1{font-size:clamp(44px,8.2vw,102px);margin:20px 0 0;text-wrap:balance;color:#fff}
+.hero h1 em{font-style:normal;display:block;color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.34);text-underline-offset:10px;text-decoration-thickness:4px}
+.hero-lede{max-width:58ch;margin-top:24px;font-size:clamp(16.5px,1.55vw,19px);color:rgba(255,255,255,.86)}
+.hero-lede strong{color:#fff;font-weight:600}
+.conv{background:#fff;color:var(--tinta);margin-top:clamp(34px,5vw,54px);padding:clamp(24px,3vw,34px);max-width:790px;border-left:5px solid var(--rojo);position:relative}
+.conv .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--rojo);display:block}
+.conv h2{font-size:clamp(23px,3vw,35px);margin:12px 0 10px;color:var(--azul)}
+.conv p{color:var(--gris-txt);font-size:15.5px;max-width:54ch}
+.conv-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+
+/* FUNDADORA */
+.fundadora{background:var(--gris)}
+.fund-grid{display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,56px);align-items:center}
+@media(min-width:880px){.fund-grid{grid-template-columns:.85fr 1.15fr}}
+.fund-seal{background:#fff;border:1px solid var(--rule);border-top:4px solid var(--rojo);padding:clamp(26px,3.4vw,38px);text-align:center}
+.fund-seal .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--rojo)}
+.fund-logo{display:block;height:clamp(38px,4.6vw,52px);width:auto;margin:24px auto 20px}
+.fund-seal .d{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#8B8FA0}
+.fund-txt h2{font-size:clamp(25px,3.1vw,39px);color:var(--azul)}
+.fund-txt p{color:var(--gris-txt);margin-top:18px;max-width:50ch}
+.cita{margin:26px 0 0;padding:0 0 0 22px;border-left:4px solid var(--rojo);font-family:var(--display);font-style:italic;font-size:clamp(21px,2.5vw,30px);line-height:1.2;color:var(--azul)}
+.cita cite{display:block;margin-top:13px;font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--rojo)}
+
+/* ACTA */
+.acta-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--azul);padding-bottom:10px;margin:42px 0 0}
+.acta-head .count{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:#8B8FA0}
+.acta{list-style:none;margin:0;padding:0}
+.firma{display:flex;align-items:baseline;gap:16px;padding:17px 4px 14px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.firma .num{font-family:var(--mono);font-size:11.5px;color:#A2A6B6;flex:0 0 auto;min-width:22px}
+.firma .rubrica{font-family:var(--display);font-size:clamp(20px,2.4vw,28px);line-height:1.05;color:var(--azul)}
+.firma .rol{font-size:14.5px;color:var(--gris-txt);flex:1 1 230px}
+.firma .estado{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8B8FA0;flex:0 0 auto;margin-left:auto}
+.firma--fund{background:var(--azul-tint)}
+.firma--fund .rubrica{font-style:italic;color:var(--rojo)}
+.firma--fund .estado{color:var(--rojo)}
+.firma--op .rubrica{color:var(--azul)}
+.firma--open .rubrica{color:#A2A6B6;font-style:italic}
+.acta-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+
+/* PASOS */
+.pasos{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);margin-top:42px;border:1px solid var(--rule)}
+@media(min-width:780px){.pasos{grid-template-columns:repeat(3,1fr)}}
+.paso{background:#fff;padding:clamp(24px,3vw,34px)}
+.paso .p-n{font-family:var(--mono);font-size:11.5px;color:var(--rojo);letter-spacing:.13em}
+.paso h3{font-size:clamp(22px,2.3vw,28px);margin:14px 0 12px;color:var(--azul)}
+.paso p{color:var(--gris-txt);font-size:15.5px}
+
+/* SPLIT + LISTA */
+.split{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,60px);align-items:start}
+@media(min-width:900px){.split{grid-template-columns:.85fr 1.15fr}}
+.lista{list-style:none;padding:0;margin:0}
+.lista li{border-top:1px solid var(--rule);padding:20px 0;display:grid;grid-template-columns:1fr;gap:6px}
+@media(min-width:640px){.lista li{grid-template-columns:.6fr 1.4fr;gap:24px;align-items:baseline}}
+.lista li:last-child{border-bottom:1px solid var(--rule)}
+.lista .t{font-family:var(--display);font-size:20px;color:var(--azul)}
+.lista .d{color:var(--gris-txt);font-size:15.5px}
+
+/* CAPITULOS */
+.caps{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);margin-top:38px;border:1px solid var(--rule)}
+@media(min-width:700px){.caps{grid-template-columns:repeat(4,1fr)}}
+.cap{background:#fff;padding:26px 22px 30px}
+.cap .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:#8B8FA0;display:block}
+.cap .n{font-family:var(--display);font-size:24px;margin-top:12px;display:block;color:var(--azul)}
+.cap--live{background:var(--azul)}
+.cap--live .k{color:rgba(255,255,255,.66)}
+.cap--live .k:first-child{color:#fff}
+.cap--live .n{color:#fff}
+
+/* TERRITORIO */
+.mapa{margin-top:42px;border-top:2px solid var(--azul)}
+.ciudad{display:flex;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.ciudad .dot{width:9px;height:9px;border-radius:50%;background:var(--rojo);flex:0 0 auto;transform:translateY(-3px)}
+.ciudad .c-n{font-family:var(--display);font-size:clamp(20px,2.2vw,26px);color:var(--azul)}
+.ciudad .c-d{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#8B8FA0;text-align:right}
+
+/* LISTA DE ESPERA */
+.cierre{background:var(--gris)}
+.cierre h2{font-size:clamp(32px,4.8vw,58px);color:var(--azul);text-wrap:balance}
+.form{margin-top:32px;display:grid;grid-template-columns:1fr;gap:16px;max-width:660px}
+@media(min-width:640px){.form{grid-template-columns:1fr 1fr}}
+.form-block{grid-column:1/-1;font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--rojo);margin:14px 0 -2px;border-top:1px solid var(--rule);padding-top:22px}
+.form-block:first-child{margin-top:0;border-top:0;padding-top:0}
+.field{display:flex;flex-direction:column;gap:7px}
+.field--full{grid-column:1/-1}
+label{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7B7F8E}
+input,select{background:#fff;border:1px solid var(--rule);color:var(--tinta);font-family:var(--body);font-size:16px;padding:11px 12px;border-radius:2px;width:100%}
+input::placeholder{color:#A9ADBC}
+input:focus,select:focus{outline:0;border-color:var(--azul);box-shadow:0 0 0 3px rgba(0,51,160,.13)}
+.check{display:flex;align-items:flex-start;gap:11px;font-family:var(--body);font-size:14px;letter-spacing:0;text-transform:none;color:var(--gris-txt);cursor:pointer;margin-top:6px;grid-column:1/-1}
+.check input{width:17px;height:17px;flex:0 0 auto;margin-top:3px;accent-color:var(--rojo)}
+.check b{color:var(--rojo);font-weight:500;font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:8px}
+.msg{font-family:var(--mono);font-size:12px;color:var(--rojo)}
+.aliados{margin-top:clamp(48px,6vw,76px);padding-top:clamp(30px,4vw,42px);border-top:2px solid var(--azul)}
+.aliados h3{font-size:clamp(22px,2.5vw,31px);color:var(--azul);font-family:var(--display);font-weight:600}
+.aliados p{color:var(--gris-txt);margin-top:14px;max-width:56ch;font-size:15.5px}
+.contacto{margin-top:26px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:baseline}
+.contacto a{font-family:var(--display);font-size:clamp(20px,2.3vw,27px);color:var(--rojo);text-decoration:none;border-bottom:2px solid rgba(218,41,28,.24)}
+.contacto a:hover{border-bottom-color:var(--rojo)}
+.contacto .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8B8FA0;display:block;margin-bottom:7px}
+
+footer{background:var(--azul);color:#fff;padding:38px 0 56px;font-size:13.5px}
+.f-in{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.f-in .mono{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+footer strong{font-weight:600}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="mark" href="#top"><svg class="" viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="50.000,49.041 39.390,34.438 50.000,5.341 60.610,34.438" fill="#0033A0"/><polygon points="50.912,49.704 61.522,35.101 92.474,36.200 68.079,55.281" fill="#DA291C"/><polygon points="50.564,50.776 67.730,56.354 76.250,86.130 50.564,68.826" fill="#0033A0"/><polygon points="49.436,50.776 49.436,68.826 23.750,86.130 32.270,56.354" fill="#DA291C"/><polygon points="49.088,49.704 31.921,55.281 7.526,36.200 38.478,35.101" fill="#0033A0"/></svg><span class="wm">PACTO<span>PYME</span></span></a>
+    <span class="nav-tag">Si las pymes crecen, Chile crece</span>
+    <a class="btn" href="#lista">Quiero ser parte</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<section class="hero">
+  <svg class="hero-star" viewBox="0 0 100 100" width="300" height="300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="50.000,49.041 39.390,34.438 50.000,5.341 60.610,34.438" fill="#FFFFFF"/><polygon points="50.912,49.704 61.522,35.101 92.474,36.200 68.079,55.281" fill="#FFFFFF"/><polygon points="50.564,50.776 67.730,56.354 76.250,86.130 50.564,68.826" fill="#FFFFFF"/><polygon points="49.436,50.776 49.436,68.826 23.750,86.130 32.270,56.354" fill="#FFFFFF"/><polygon points="49.088,49.704 31.921,55.281 7.526,36.200 38.478,35.101" fill="#FFFFFF"/></svg>
+  <div class="wrap">
+    <p class="eyebrow">Un pacto nacional por las pymes &middot; Chile 2026</p>
+    <h1>Si las pymes crecen,<em>Chile crece.</em></h1>
+    <p class="hero-lede">
+      Empresas, gremios, sociedad civil e instituciones p&uacute;blicas poni&eacute;ndose de acuerdo en una
+      sola cosa: que las pymes de Chile crezcan. Cada una aporta lo que tiene &mdash;recursos, redes,
+      conocimiento, territorio&mdash; y el Pacto lo convierte en <strong>formaci&oacute;n gratuita para que
+      las pymes vendan m&aacute;s, gasten menos y operen mejor</strong>. Inteligencia artificial, herramientas
+      digitales, finanzas, gesti&oacute;n: lo que cada sector necesita para dar el salto.
+    </p>
+    <p class="hero-lede" style="margin-top:16px">
+      Por separado, cada aporte alcanza para un programa. Juntos, alcanza para mover el pa&iacute;s.
+    </p>
+
+    <div class="conv">
+      <span class="k">Primera convocatoria &middot; agosto 2026</span>
+      <h2>Inteligencia artificial para restaurantes, hoteles y casinos.</h2>
+      <p>
+        El Pacto arranca por el sector que atiende a Chile todos los d&iacute;as. Formaci&oacute;n sin costo,
+        en seis ciudades, para due&ntilde;os y equipos de negocios HORECA. Los cupos son limitados y se
+        asignan por orden de inscripci&oacute;n en la lista de espera.
+      </p>
+      <div class="conv-cta">
+        <a class="btn" href="#lista">Entrar a la lista de espera</a>
+        <a class="btn btn--ghost" href="#pymes">Ver qu&eacute; incluye</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fundadora">
+  <div class="wrap fund-grid">
+    <div class="fund-seal">
+      <span class="k">Empresa fundadora</span>
+      <img class="fund-logo" src="data:image/png;base64,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" alt="Abastible">
+      <span class="d">Primera firma &middot; julio 2026</span>
+    </div>
+    <div class="fund-txt">
+      <h2>El Pacto empieza con una visi&oacute;n, no con un presupuesto.</h2>
+      <p>
+        Abastible no lleg&oacute; a comprar un programa de capacitaci&oacute;n. Lleg&oacute; con una
+        convicci&oacute;n propia sobre el rol que una empresa grande puede jugar en el crecimiento de
+        las pymes de Chile, y decidi&oacute; firmar primero para que el Pacto existiera.
+      </p>
+      <blockquote class="cita">
+        Si las pymes crecen, Chile crece.
+        <cite>Crist&oacute;bal Aravena &middot; L&iacute;der de Prop&oacute;sito y Relacionamiento, Abastible</cite>
+      </blockquote>
+      <p>
+        Esa frase es el origen del Pacto y su regla de decisi&oacute;n. Lo que sigue es abrirla: que
+        otras empresas e instituciones la hagan suya y sumen su propio aporte.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="acta">
+  <div class="wrap">
+    <p class="eyebrow">Qui&eacute;nes lo firman</p>
+    <h2 class="h-sec">El acta del Pacto.</h2>
+    <p class="sec-lede">Cada actor pone lo que tiene: aporte, red, convocatoria o articulaci&oacute;n
+    territorial. Ninguno podr&iacute;a hacerlo solo.</p>
+
+    <div class="acta-head">
+      <span class="eyebrow">Acta de firmas</span>
+      <span class="count">Chile &middot; 2026</span>
+    </div>
+    <ol class="acta">
+      <li class="firma firma--fund">
+        <span class="num">01</span>
+        <span class="rubrica">Abastible</span>
+        <span class="rol">Empresa fundadora. Abre el Pacto: aporta su franquicia tributaria, su red de pymes y su nombre.</span>
+        <span class="estado">Fundadora</span>
+      </li>
+      <li class="firma firma--op">
+        <span class="num">02</span>
+        <span class="rubrica">Desaf&iacute;o Latam</span>
+        <span class="rol">Operador del Pacto. Articula los aportes y beneficios de cada firmante, dise&ntilde;a la ruta formativa y ejecuta las formaciones como OTEC certificada.</span>
+        <span class="estado">Operador y ejecutor</span>
+      </li>
+      <li class="firma">
+        <span class="num">03</span>
+        <span class="rubrica">ACTI</span>
+        <span class="rol">Gremio tecnol&oacute;gico. Contenido experto, relatores y validaci&oacute;n t&eacute;cnica en IA.</span>
+        <span class="estado">Aliado</span>
+      </li>
+      <li class="firma">
+        <span class="num">04</span>
+        <span class="rubrica">ASECH</span>
+        <span class="rol">Asociaci&oacute;n de Emprendedores de Chile. Convocatoria y llegada directa a la pyme.</span>
+        <span class="estado">Aliado</span>
+      </li>
+      <li class="firma">
+        <span class="num">05</span>
+        <span class="rubrica">Mujeres Empresarias</span>
+        <span class="rol">Red femenina. Asegura que las emprendedoras no queden fuera del programa.</span>
+        <span class="estado">Aliado</span>
+      </li>
+      <li class="firma">
+        <span class="num">06</span>
+        <span class="rubrica">Ministerio de Econom&iacute;a</span>
+        <span class="rol">Articulaci&oacute;n con los instrumentos de fomento a las empresas de menor tama&ntilde;o.</span>
+        <span class="estado">Invitaci&oacute;n cursada</span>
+      </li>
+      <li class="firma">
+        <span class="num">07</span>
+        <span class="rubrica">Municipalidades</span>
+        <span class="rol">Difusi&oacute;n local, espacios y convocatoria en las seis ciudades del programa.</span>
+        <span class="estado">En coordinaci&oacute;n</span>
+      </li>
+      <li class="firma firma--open">
+        <span class="num">08</span>
+        <span class="rubrica">Su organizaci&oacute;n aqu&iacute;</span>
+        <span class="rol">Cada organizaci&oacute;n que suma su aporte ampl&iacute;a lo que el Pacto puede ense&ntilde;ar y a cu&aacute;ntas pymes llega.</span>
+        <span class="estado">Firma abierta</span>
+      </li>
+    </ol>
+    <div class="acta-cta">
+      <a class="btn btn--ghost" href="#lista">Entrar a la lista de espera</a>
+      <span class="nota" style="margin:0">Desaf&iacute;o Latam acredita m&aacute;s de 40.000 personas formadas en Am&eacute;rica Latina y una d&eacute;cada operando programas de este tama&ntilde;o.</span>
+    </div>
+  </div>
+</section>
+
+<section id="mecanismo" style="background:var(--gris)">
+  <div class="wrap">
+    <p class="eyebrow">El mecanismo</p>
+    <h2 class="h-sec">Lo que una organizaci&oacute;n sola no puede montar, varias s&iacute;.</h2>
+    <div class="pasos">
+      <div class="paso">
+        <span class="p-n">Paso 01</span>
+        <h3>Cada uno aporta lo suyo</h3>
+        <p>Hay muchas formas de firmar. Franquicia tributaria de capacitaci&oacute;n, presupuesto de
+        sostenibilidad, contenido y relatores propios, la red de pymes de la cadena, salas, difusi&oacute;n
+        o convocatoria territorial. Ning&uacute;n aporte es demasiado chico.</p>
+      </div>
+      <div class="paso">
+        <span class="p-n">Paso 02</span>
+        <h3>El Pacto lo multiplica</h3>
+        <p>Los aportes se consolidan en una sola infraestructura compartida: plataforma, contenidos,
+        relatores, convocatoria y medici&oacute;n. Cada firma nueva baja el costo por persona formada y
+        ampl&iacute;a lo que el Pacto puede ense&ntilde;ar.</p>
+      </div>
+      <div class="paso">
+        <span class="p-n">Paso 03</span>
+        <h3>Y la pyme recibe una sola cosa</h3>
+        <p>No seis programas sueltos: una ruta de formaci&oacute;n coherente y gratuita. Para la empresa
+        que aporta v&iacute;a franquicia, adem&aacute;s, el desembolso se recupera v&iacute;a impuesto a la renta.</p>
+      </div>
+    </div>
+    <p class="nota">
+      Cada aporte se estructura con el &aacute;rea correspondiente de la organizaci&oacute;n que firma:
+      capacitaci&oacute;n, sostenibilidad, asuntos corporativos o fomento.
+    </p>
+  </div>
+</section>
+
+<section id="pymes">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Para la pyme</p>
+      <h2 class="h-sec">Gratis, aplicado y con acompa&ntilde;amiento.</h2>
+      <p class="sec-lede">No son charlas motivacionales. Es formaci&oacute;n que el negocio puede usar el
+      lunes siguiente, y que crece a medida que se suman firmantes con nuevos temas.</p>
+    </div>
+    <ul class="lista">
+      <li><span class="t">Formaci&oacute;n certificada</span><span class="d">Cursos e&#8209;learning con certificaci&oacute;n SENCE, sin costo para la pyme ni para el trabajador. Hoy en inteligencia artificial y transformaci&oacute;n digital; ma&ntilde;ana, en lo que traiga cada nuevo firmante.</span></li>
+      <li><span class="t">Talleres en vivo</span><span class="d">Sesiones sincr&oacute;nicas y mentor&iacute;as aplicadas al negocio: vender m&aacute;s, bajar costos, ordenar la operaci&oacute;n, manejar las finanzas y usar bien las herramientas digitales.</span></li>
+      <li><span class="t">Un hito presencial</span><span class="d">Una sesi&oacute;n magistral abierta en cada ciudad, con alianza municipal y las organizaciones firmantes presentes.</span></li>
+      <li><span class="t">Beneficios de los aliados</span><span class="d">Cada organizaci&oacute;n del Pacto aporta algo extra para la pyme que participa. En el Cap&iacute;tulo HORECA, Welcome Back activa su plataforma de men&uacute; digital, fidelizaci&oacute;n y marketing, con acompa&ntilde;amiento para implementarla.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="capitulos" style="background:var(--gris)">
+  <div class="wrap">
+    <p class="eyebrow">Cap&iacute;tulos</p>
+    <h2 class="h-sec">Cada firmante abre el cap&iacute;tulo que sabe hacer.</h2>
+    <p class="sec-lede">Un cap&iacute;tulo puede ser un sector &mdash;donde la empresa ya tiene su red de
+    pymes&mdash; o una materia que domina. As&iacute; la convocatoria no parte de cero y el contenido lo
+    ense&ntilde;a quien de verdad sabe.</p>
+    <div class="caps">
+      <div class="cap cap--live">
+        <span class="k">Cap&iacute;tulo 01 &middot; en marcha</span>
+        <span class="n">HORECA</span>
+        <span class="k" style="margin-top:10px">IA y digitalizaci&oacute;n para restaurantes, hoteles y casinos</span>
+      </div>
+      <div class="cap">
+        <span class="k">Cap&iacute;tulo 02 &middot; abierto</span>
+        <span class="n">Finanzas</span>
+        <span class="k" style="margin-top:10px">Instrumentos financieros y gesti&oacute;n para el due&ntilde;o de pyme</span>
+      </div>
+      <div class="cap">
+        <span class="k">Cap&iacute;tulo 03 &middot; abierto</span>
+        <span class="n">Comercio</span>
+        <span class="k" style="margin-top:10px">Retail de barrio, almacenes y proveedores</span>
+      </div>
+      <div class="cap">
+        <span class="k">Cap&iacute;tulo 04 &middot; abierto</span>
+        <span class="n">Su foco</span>
+        <span class="k" style="margin-top:10px">Lo define la organizaci&oacute;n que firma</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="territorio">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Territorio</p>
+      <h2 class="h-sec">Seis ciudades, no solo Santiago.</h2>
+      <p class="sec-lede">Cada ciudad recibe cupos propios y una sesi&oacute;n magistral presencial. Las
+      fechas se coordinan con cada municipio.</p>
+    </div>
+    <div class="mapa">
+      <div class="ciudad"><span class="dot"></span><span class="c-n">Antofagasta</span><span class="c-d">Casinos + restaurantes</span></div>
+      <div class="ciudad"><span class="dot"></span><span class="c-n">Valpara&iacute;so</span><span class="c-d">Hoteles + restaurantes</span></div>
+      <div class="ciudad"><span class="dot"></span><span class="c-n">Santiago</span><span class="c-d">Kick&#8209;off nacional</span></div>
+      <div class="ciudad"><span class="dot"></span><span class="c-n">Concepci&oacute;n</span><span class="c-d">Seg&uacute;n demanda</span></div>
+      <div class="ciudad"><span class="dot"></span><span class="c-n">Temuco</span><span class="c-d">Restaurantes</span></div>
+      <div class="ciudad"><span class="dot"></span><span class="c-n">Puerto Montt</span><span class="c-d">Seg&uacute;n demanda</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cierre" id="lista">
+  <div class="wrap">
+    <p class="eyebrow">Lista de espera &middot; Cap&iacute;tulo 01 HORECA</p>
+    <h2>Deje su negocio anotado.</h2>
+    <p class="sec-lede" style="max-width:56ch">
+      Las inscripciones abren en agosto de 2026. Quienes est&eacute;n en la lista reciben el aviso primero,
+      con los cupos de su ciudad y las fechas de la sesi&oacute;n presencial. Inscribirse no cuesta nada y
+      no compromete a nada.
+    </p>
+
+    <div class="form">
+      <p class="form-block">La empresa</p>
+      <div class="field field--full">
+        <label for="razon">Raz&oacute;n social</label>
+        <input id="razon" type="text" placeholder="Nombre legal de la empresa" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="rut">RUT de la empresa</label>
+        <input id="rut" type="text" placeholder="76.543.210-K">
+      </div>
+      <div class="field">
+        <label for="tamano">Tama&ntilde;o seg&uacute;n ventas anuales</label>
+        <select id="tamano">
+          <option value="">Seleccione</option>
+          <option>Microempresa &middot; hasta 2.400 UF</option>
+          <option>Peque&ntilde;a &middot; 2.400 a 25.000 UF</option>
+          <option>Mediana &middot; 25.000 a 100.000 UF</option>
+          <option>Grande &middot; sobre 100.000 UF</option>
+          <option>No lo s&eacute;</option>
+        </select>
+      </div>
+      <div class="field field--full">
+        <label for="rubro">Rubro</label>
+        <select id="rubro">
+          <optgroup label="Cap&iacute;tulo 01 &middot; HORECA &mdash; convocatoria abierta">
+            <option>Restaurante, caf&eacute; o fuente de soda</option>
+            <option>Hotel, hostal, caba&ntilde;as u otro alojamiento</option>
+            <option>Casino institucional o catering</option>
+            <option>Bar, pub o discoteca</option>
+            <option>Food truck, delivery o cocina oculta</option>
+            <option>Panader&iacute;a, pasteler&iacute;a o rotiser&iacute;a</option>
+          </optgroup>
+          <optgroup label="Otros rubros &mdash; lista de espera de pr&oacute;ximos cap&iacute;tulos">
+            <option>Comercio al por menor</option>
+            <option>Comercio al por mayor y distribuci&oacute;n</option>
+            <option>Industria manufacturera y alimentos</option>
+            <option>Construcci&oacute;n</option>
+            <option>Transporte y almacenamiento</option>
+            <option>Turismo, cultura y entretenimiento</option>
+            <option>Servicios profesionales y t&eacute;cnicos</option>
+            <option>Tecnolog&iacute;a y comunicaciones</option>
+            <option>Salud y cuidados</option>
+            <option>Educaci&oacute;n y capacitaci&oacute;n</option>
+            <option>Agricultura, pesca y silvicultura</option>
+            <option>Servicios personales y otros</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="field">
+        <label for="region">Regi&oacute;n donde opera</label>
+        <select id="region">
+          <option value="">Seleccione</option>
+          <option>Arica y Parinacota</option>
+          <option>Tarapac&aacute;</option>
+          <option>Antofagasta</option>
+          <option>Atacama</option>
+          <option>Coquimbo</option>
+          <option>Valpara&iacute;so</option>
+          <option>Metropolitana de Santiago</option>
+          <option>Libertador General Bernardo O'Higgins</option>
+          <option>Maule</option>
+          <option>&Ntilde;uble</option>
+          <option>Biob&iacute;o</option>
+          <option>La Araucan&iacute;a</option>
+          <option>Los R&iacute;os</option>
+          <option>Los Lagos</option>
+          <option>Ays&eacute;n del General Carlos Ib&aacute;&ntilde;ez del Campo</option>
+          <option>Magallanes y de la Ant&aacute;rtica Chilena</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="comuna">Ciudad o comuna</label>
+        <input id="comuna" type="text" placeholder="Ej: Puerto Varas" autocomplete="address-level2">
+      </div>
+
+      <p class="form-block">Qui&eacute;n se inscribe</p>
+      <div class="field">
+        <label for="nombre">Nombre y apellido</label>
+        <input id="nombre" type="text" placeholder="Su nombre" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="cargo">Rol en la empresa</label>
+        <input id="cargo" type="text" placeholder="Due&ntilde;o, administrador, jefe de local">
+      </div>
+      <div class="field">
+        <label for="email">Correo</label>
+        <input id="email" type="email" placeholder="nombre@sunegocio.cl" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="fono">Tel&eacute;fono o WhatsApp</label>
+        <input id="fono" type="tel" placeholder="+56 9 ..." autocomplete="tel">
+      </div>
+
+      <label class="check" for="ok">
+        <input id="ok" type="checkbox">
+        <span>Autorizo el uso de estos datos para gestionar mi cupo, tramitar la beca SENCE y medir los resultados del programa. <b>Requerido</b></span>
+      </label>
+      <label class="check" for="ok2">
+        <input id="ok2" type="checkbox">
+        <span>Quiero recibir los beneficios de los aliados del Pacto y autorizo que los datos de mi empresa
+        &mdash; raz&oacute;n social, RUT, rubro, tama&ntilde;o y ciudad &mdash; se compartan con <b>Abastible</b> y
+        <b>Welcome Back</b> para activarlos y medir el impacto del programa en mi negocio. <b>Opcional</b></span>
+      </label>
+
+      <div class="form-foot">
+        <button class="btn" id="enviar">Entrar a la lista de espera</button>
+        <span class="msg" id="msg" role="status" aria-live="polite"></span>
+      </div>
+      <p class="nota" style="grid-column:1/-1">
+        El RUT de la empresa es requisito para tramitar la beca SENCE y para reportar resultados por
+        tama&ntilde;o de empresa. Lo que se comparte con los aliados son datos de la empresa, no datos
+        personales para uso comercial, y se rige por un acuerdo de tratamiento de datos entre las
+        organizaciones del Pacto. Puede revocar esta autorizaci&oacute;n en cualquier momento escribiendo
+        a contacto@pactopyme.cl.
+      </p>
+    </div>
+
+    <div class="aliados">
+      <h3>&iquest;Su organizaci&oacute;n quiere sumarse al Pacto?</h3>
+      <p>
+        Empresas, gremios e instituciones que quieran aportar y abrir su propio cap&iacute;tulo:
+        conversemos. Treinta minutos alcanzan para revisar las formas de aportar y qu&eacute; foco le calza
+        a su organizaci&oacute;n.
+      </p>
+      <div class="contacto">
+        <div><span class="k">Escr&iacute;banos</span><a href="mailto:contacto@pactopyme.cl">contacto@pactopyme.cl</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap f-in">
+    <span class="mono"><svg class="" viewBox="0 0 100 100" width="26" height="26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="50.000,49.041 39.390,34.438 50.000,5.341 60.610,34.438" fill="#FFFFFF"/><polygon points="50.912,49.704 61.522,35.101 92.474,36.200 68.079,55.281" fill="#FFFFFF"/><polygon points="50.564,50.776 67.730,56.354 76.250,86.130 50.564,68.826" fill="#FFFFFF"/><polygon points="49.436,50.776 49.436,68.826 23.750,86.130 32.270,56.354" fill="#FFFFFF"/><polygon points="49.088,49.704 31.921,55.281 7.526,36.200 38.478,35.101" fill="#FFFFFF"/></svg> Pacto Pyme &middot; Chile 2026</span>
+    <span class="mono">contacto@pactopyme.cl</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('enviar').addEventListener('click', function(){
+  var msg = document.getElementById('msg');
+  var mail = document.getElementById('email').value.trim();
+  var razon = document.getElementById('razon').value.trim();
+  var rut = document.getElementById('rut').value.trim();
+  if (!razon || !rut){ msg.textContent = 'Falta la raz\u00f3n social y el RUT de la empresa.'; return; }
+  if (!mail || mail.indexOf('@') < 1){ msg.textContent = 'Revise el correo de contacto.'; return; }
+  if (!document.getElementById('ok').checked){ msg.textContent = 'Marque la autorizaci\u00f3n para poder inscribirlo.'; return; }
+  msg.textContent = 'Anotado. Le escribimos en agosto con los cupos de su ciudad.';
+});
+</script>
+</body>
+</html>
