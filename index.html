@@ -76,7 +76,8 @@ section{padding:clamp(58px,8vw,110px) 0}
 .acta{list-style:none;margin:0;padding:0}
 .firma{display:flex;align-items:baseline;gap:16px;padding:17px 4px 14px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
 .firma .num{font-family:var(--mono);font-size:11.5px;color:#A2A6B6;flex:0 0 auto;min-width:22px}
-.firma .rubrica{font-family:var(--display);font-size:clamp(20px,2.4vw,28px);line-height:1.05;color:var(--azul)}
+.firma .rubrica{font-family:var(--display);font-size:clamp(20px,2.4vw,28px);line-height:1.05;color:var(--azul);display:flex;align-items:center;min-height:48px}
+.firma .rubrica img.firma-logo{max-height:46px;width:auto;max-width:240px;object-fit:contain;display:block}
 .firma .rol{font-size:14.5px;color:var(--gris-txt);flex:1 1 230px}
 .firma .estado{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8B8FA0;flex:0 0 auto;margin-left:auto}
 .firma--fund{background:var(--azul-tint)}
@@ -203,7 +204,7 @@ footer{background:var(--azul);color:#fff;padding:38px 0 56px;font-size:13.5px}
   <div class="wrap fund-grid">
     <div class="fund-seal">
       <span class="k">Empresa fundadora</span>
-        <img class="fund-logo" src="/assets/abastible-logo.png?v=2" alt="Abastible">
+        <img class="fund-logo" src="/assets/abastible-logo.png" alt="Abastible">
       <span class="d">Primera firma &middot; julio 2026</span>
     </div>
     <div class="fund-txt">
@@ -239,19 +240,19 @@ footer{background:var(--azul);color:#fff;padding:38px 0 56px;font-size:13.5px}
     <ol class="acta">
       <li class="firma firma--fund">
         <span class="num">01</span>
-        <span class="rubrica">Abastible</span>
+        <span class="rubrica"><img class="firma-logo" src="/assets/abastible-logo.png" alt="Abastible"></span>
         <span class="rol">Empresa fundadora. Abre el Pacto: aporta su franquicia tributaria, su red de pymes y su nombre.</span>
         <span class="estado">Fundadora</span>
       </li>
       <li class="firma">
         <span class="num">02</span>
-        <span class="rubrica">ACTI</span>
+        <span class="rubrica"><img class="firma-logo" src="/assets/acti-logo.png" alt="ACTI"></span>
         <span class="rol">Gremio tecnol&oacute;gico. Contenido experto, relatores y validaci&oacute;n t&eacute;cnica en IA.</span>
         <span class="estado">Aliado</span>
       </li>
       <li class="firma">
         <span class="num">03</span>
-        <span class="rubrica">ASECH</span>
+        <span class="rubrica"><img class="firma-logo" src="/assets/asech-logo.png" alt="ASECH"></span>
         <span class="rol">Asociaci&oacute;n de Emprendedores de Chile. Convocatoria y llegada directa a la pyme.</span>
         <span class="estado">Aliado</span>
       </li>
@@ -269,7 +270,7 @@ footer{background:var(--azul);color:#fff;padding:38px 0 56px;font-size:13.5px}
       </li>
       <li class="firma">
         <span class="num">06</span>
-        <span class="rubrica">Desaf&iacute;o Latam</span>
+        <span class="rubrica"><img class="firma-logo" src="/assets/desafio-latam-logo.png" alt="Desaf&iacute;o Latam"></span>
         <span class="rol">Operador del Pacto. Articula los aportes y beneficios de cada firmante, dise&ntilde;a la ruta formativa y ejecuta las formaciones como OTEC certificada.</span>
         <span class="estado">Operador y ejecutor</span>
       </li>
