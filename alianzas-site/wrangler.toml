@@ -1,0 +1,8 @@
+name = "pacto-pyme-alianzas"
+pages_build_output_dir = "."
+compatibility_date = "2026-09-30"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pacto-pyme-registros"
+database_id = "a6c4abeb-bd89-4c04-b3fe-8df86c86b365"

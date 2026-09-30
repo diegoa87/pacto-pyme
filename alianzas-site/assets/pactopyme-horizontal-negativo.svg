@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <g fill="#FFFFFF">
+    <rect x="25" y="17" width="46" height="15" rx="7.5"/>
+    <rect x="68" y="25" width="15" height="46" rx="7.5"/>
+    <rect x="29" y="68" width="46" height="15" rx="7.5"/>
+    <rect x="17" y="29" width="15" height="46" rx="7.5"/>
+  </g>
+  <text x="110" y="48" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="38" fill="#FFFFFF" letter-spacing="2">PACTO</text>
+  <text x="110" y="80" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="28" fill="#FFFFFF" letter-spacing="2">PYME</text>
+</svg>
