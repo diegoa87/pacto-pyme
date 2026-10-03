@@ -4,93 +4,166 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pacto Pyme &mdash; Si las pymes crecen, Chile crece</title>
-<meta name="description" content="Empresas, gremios, sociedad civil e instituciones p&uacute;blicas unidas para que las pymes de Chile vendan m&aacute;s, gasten menos y operen mejor. Formaci&oacute;n gratuita en seis ciudades. Empresa fundadora: Abastible.">
+<meta name="description" content="Pacto Pyme re&uacute;ne a empresas, gremios e instituciones para que las pymes de Chile vendan m&aacute;s, gasten menos y operen mejor. Formaci&oacute;n gratuita, empezando por el sector HORECA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --azul:#0033A0; --azul-hover:#002478; --azul-tint:#EDF1FB;
-  --rojo:#DA291C; --rojo-hover:#B71F14;
-  --tinta:#101014; --gris:#F4F5F9; --rule:#E1E4EF; --gris-txt:#565A6B;
-  --display:"Fraunces",Georgia,serif;
-  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  /* Marca provisoria · propuesta 01 "Cúspide" */
+  --verde:#0F3D2E; --verde-hover:#0A2A20; --verde-tint:#E7EFE9;
+  /* Coral de la direccion de arte "LEVE" (STLF, sep-2026), muestreado de su
+     tablero. Reemplaza al lima de Cuspide como color de accion en todo el
+     sitio. Ojo: blanco sobre coral da 3,39 y no pasa AA para texto chico;
+     si alguna vez lo piden accesible, el mismo tono al 80% (#BE4A31) da 4,98. */
+  --coral:#ED5C3D; --negro:#1A1A1A; --coral-hover:#CC4F34;
+  --salvia:#93B7A4; --alerta:#B3261E;
+  --tinta:#1C1F24; --paper:#FBFAF6; --gris:#F2EFE7; --rule:#E0DDD2; --gris-txt:#3F5A66;
+  --display:"IBM Plex Sans",sans-serif;
+  --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --pad:clamp(20px,5vw,84px);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#fff;color:var(--tinta);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--tinta);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;letter-spacing:-.02em;line-height:1.04}
 p{margin:0} a{color:inherit}
-.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
 section{padding:clamp(58px,8vw,110px) 0}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--rojo)}
-.h-sec{font-size:clamp(30px,4.1vw,50px);margin-top:14px;text-wrap:balance;color:var(--azul)}
+/* Kicker al estilo del manual: rótulo, un tramo corto de lima y una línea
+   fina que corre hasta el final de la columna. */
+.eyebrow{display:flex;align-items:center;gap:12px;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:0.118em;text-transform:uppercase;color:var(--verde)}
+.eyebrow::after{content:"";flex:1 1 auto;height:1px;min-width:24px;background:linear-gradient(to right,var(--coral) 0,var(--coral) 34px,var(--rule) 34px)}
+.acta-head .eyebrow::after,.hero-card .eyebrow::after{display:none}
+.h-sec{font-size:clamp(30px,4.1vw,50px);margin-top:14px;text-wrap:balance;color:var(--verde);letter-spacing:-.03em}
 .sec-lede{color:var(--gris-txt);margin-top:18px;max-width:46ch}
-.nota{font-family:var(--mono);font-size:11.5px;color:#7B7F8E;margin-top:24px;line-height:1.8;max-width:72ch}
-:focus-visible{outline:3px solid var(--rojo);outline-offset:3px}
+.nota{font-family:var(--mono);font-size:11.5px;color:#55707B;margin-top:24px;line-height:1.8;max-width:72ch}
+:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
 
-.btn{font-family:var(--body);font-weight:600;font-size:14.5px;background:var(--rojo);color:#fff;border:0;border-radius:2px;padding:12px 22px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .18s ease,transform .18s ease}
-.btn:hover{background:var(--rojo-hover);transform:translateY(-1px)}
-.btn--ghost{background:transparent;color:var(--azul);border:1.5px solid var(--azul)}
-.btn--ghost:hover{background:var(--azul);color:#fff}
+.btn{font-family:var(--body);font-weight:600;font-size:14.5px;background:var(--coral);color:#fff;border:0;border-radius:2px;padding:12px 22px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .18s ease,transform .18s ease}
+.btn:hover{background:var(--coral-hover);transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--verde);border:1.5px solid var(--verde)}
+.btn--ghost:hover{background:var(--verde);color:#fff}
 
-.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
-.nav-in{display:flex;align-items:center;gap:16px;padding:12px var(--pad);max-width:1160px;margin:0 auto}
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,250,246,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav-in{display:flex;align-items:center;gap:16px;padding:12px var(--pad);max-width:1320px;margin:0 auto}
 .mark{display:flex;align-items:center;gap:11px;text-decoration:none}
-.mark .wm{font-family:var(--body);font-weight:700;font-size:19px;letter-spacing:-.02em;line-height:.95;display:flex;flex-direction:column;text-transform:uppercase;color:var(--azul)}
-.mark .wm span{font-weight:400;letter-spacing:.2em;font-size:10.5px;color:var(--rojo)}
-.nav-tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#8B8FA0;margin-left:auto;display:none}
-@media(min-width:1000px){.nav-tag{display:block}}
+.mark .wm{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.03em;line-height:1;display:flex;gap:.26em;color:var(--verde)}
+.mark .wm span{font-weight:500;color:#4E6B79}
+.nav-tag{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.06em;color:var(--verde);margin-left:auto;display:none;padding-right:22px}
+@media(min-width:1180px){.nav-tag{display:block}}
 .nav .btn{margin-left:auto}
 @media(min-width:1000px){.nav .btn{margin-left:0}}
 
-.hero{background:var(--azul);color:#fff;position:relative;overflow:hidden;padding-bottom:clamp(46px,6vw,80px)}
-.hero-star{position:absolute;right:-70px;top:-40px;opacity:.07;pointer-events:none}
-.hero .eyebrow{color:#9FB6E8}
-.hero h1{font-size:clamp(44px,8.2vw,102px);margin:20px 0 0;text-wrap:balance;color:#fff}
-.hero h1 em{font-style:normal;display:block;color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.34);text-underline-offset:10px;text-decoration-thickness:4px}
-.hero-lede{max-width:58ch;margin-top:24px;font-size:clamp(16.5px,1.55vw,19px);color:rgba(255,255,255,.86)}
-.hero-lede strong{color:#fff;font-weight:600}
-.conv{background:#fff;color:var(--tinta);margin-top:clamp(34px,5vw,54px);padding:clamp(24px,3vw,34px);max-width:790px;border-left:5px solid var(--rojo);position:relative}
-.conv .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--rojo);display:block}
-.conv h2{font-size:clamp(23px,3vw,35px);margin:12px 0 10px;color:var(--azul)}
+.hero{background:var(--gris);color:var(--tinta);position:relative;overflow:hidden;padding-bottom:clamp(46px,6vw,80px)}
+/* Carrusel del hero: las imágenes se apilan y se cruzan con un fundido.
+   Los puntitos son para ir probando cuál calza mejor. */
+/* Isotipo de fondo: mitad izquierda, saliéndose por el borde, bien tenue.
+   La foto vive en la otra mitad, así no compiten. */
+.hero-art{position:absolute;left:-13%;top:50%;transform:translateY(-50%);width:clamp(360px,40vw,680px);height:auto;z-index:0;opacity:.05;pointer-events:none}
+@media(max-width:959px){.hero-art{left:auto;right:-32%;width:min(115%,560px);opacity:.045}}
+/* Foto de la franja de la beca: mismo lenguaje de tarjeta que el resto. */
+/* Banda de apoyos: quiénes financian y quién ejecuta. */
+.apoyo-in{display:grid;grid-template-columns:1fr;gap:clamp(34px,4vw,48px);justify-items:center;text-align:center}
+@media(min-width:820px){.apoyo-in{grid-template-columns:auto auto auto;justify-content:center;align-items:center;gap:0}
+  .apoyo-set{padding:0 clamp(26px,3.4vw,58px)}
+  .apoyo-set + .apoyo-set{border-left:1px solid var(--rule)}}
+.apoyo-set .k{display:block;font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:0.093em;text-transform:uppercase;color:var(--verde);margin-bottom:28px}
+.apoyo-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(30px,4vw,56px)}
+/* Cada logo con su propia altura: igualar los pixeles los deja disparejos a
+   la vista, porque uno es apilado, otro logotipo puro y el otro lleva icono. */
+.apoyo-logos img{width:auto;object-fit:contain}
+.apoyo-logos .l-abastible{height:clamp(32px,3.7vw,44px)}
+.apoyo-logos .l-acti{height:clamp(26px,3vw,36px)}
+.apoyo-logos .l-dl{height:clamp(42px,5vw,58px)}
+/* El del Ministerio es un bloque casi cuadrado y no un logotipo horizontal:
+   igualarlo en altura a los otros lo deja enorme al lado. */
+.apoyo-logos .l-mineco{height:clamp(94px,11vw,130px)}
+@media(min-width:700px){.caps.caps--3{grid-template-columns:repeat(3,1fr)}}
+a.cap{text-decoration:none;transition:background .18s ease}
+a.cap:hover{background:var(--verde-tint)}
+a.cap--live:hover{background:var(--coral-hover)}
+.cap .flecha{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:0.081em;text-transform:uppercase;color:var(--coral);margin-top:14px;display:block}
+.beca-grid{align-items:center}
+@media(min-width:900px){.split.beca-grid{grid-template-columns:1.2fr .8fr}}
+.beca-foto{margin:0;border-radius:16px;overflow:hidden}
+.beca-foto img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:50% 42%;filter:saturate(.92)}
+.hero-photo{margin:clamp(28px,4vw,44px) 0 0;position:relative;aspect-ratio:4/3}
+.hero-photo img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:55% center;filter:saturate(.92);opacity:0;transition:opacity .45s ease}
+.hero-photo img.is-active{opacity:1}
+.hero-dots{position:absolute;right:16px;bottom:14px;display:flex;gap:7px;z-index:2}
+.hero-dots button{width:28px;height:5px;padding:0;border:0;border-radius:3px;background:rgba(255,255,255,.5);cursor:pointer;transition:background .2s ease}
+.hero-dots button:hover{background:rgba(255,255,255,.8)}
+.hero-dots button.is-on{background:var(--coral)}
+/* De 960 para arriba la foto se va a sangre por la derecha y un velo del color
+   del papel la desvanece hacia el texto, que vive en la mitad izquierda. */
+@media(min-width:960px){
+  .hero{display:flex;align-items:center;min-height:clamp(440px,58vh,600px)}
+  .hero .wrap{width:100%;position:relative;z-index:1}
+  .hero-copy{max-width:min(52%,660px)}
+  .hero-photo{position:absolute;top:0;right:0;bottom:0;width:50%;margin:0;z-index:0;overflow:hidden;aspect-ratio:auto}
+  .hero-photo img{object-position:50% 16%}
+  .hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(to right,var(--gris) 0%,var(--gris) 4%,rgba(242,239,231,.62) 22%,rgba(242,239,231,.28) 38%,rgba(242,239,231,0) 56%)}
+}
+}
+.hero .eyebrow{color:var(--gris-txt)}
+.hero h1{font-size:clamp(36px,4.6vw,56px);margin:20px 0 0;text-wrap:balance;color:var(--verde);letter-spacing:-.035em}
+.hero h1 em{font-style:normal;display:block;color:var(--verde);text-decoration:underline;text-decoration-color:var(--coral);text-underline-offset:10px;text-decoration-thickness:6px;text-decoration-skip-ink:none}
+.hero-lede{max-width:58ch;margin-top:24px;font-size:clamp(16.5px,1.55vw,19px);color:var(--gris-txt)}
+.hero-lede strong{color:var(--verde);font-weight:600}
+.conv{background:#fff;color:var(--tinta);margin-top:clamp(34px,5vw,54px);padding:clamp(24px,3vw,34px);max-width:790px;border:1px solid var(--rule);border-left:5px solid var(--coral);position:relative}
+.conv .k{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.118em;text-transform:uppercase;color:var(--verde);display:block}
+.conv h2{font-size:clamp(23px,3vw,35px);margin:12px 0 10px;color:var(--verde)}
 .conv p{color:var(--gris-txt);font-size:15.5px;max-width:54ch}
 .conv-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 
-.fundadora{background:var(--gris)}
+.fundadora{background:var(--paper)}
 .fund-grid{display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,56px);align-items:center}
 @media(min-width:880px){.fund-grid{grid-template-columns:.85fr 1.15fr}}
-.fund-seal{background:#fff;border:1px solid var(--rule);border-top:4px solid var(--rojo);padding:clamp(26px,3.4vw,38px);text-align:center}
-.fund-seal .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--rojo)}
-.fund-logo{display:block;height:clamp(38px,4.6vw,52px);width:auto;margin:24px auto 20px}
-.fund-seal .d{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#8B8FA0}
-.fund-txt h2{font-size:clamp(25px,3.1vw,39px);color:var(--azul)}
+/* Tarjeta al estilo del manual de marca: esquina redondeada, borde suave,
+   etiqueta mono arriba, contenido y una línea fina antes del pie. */
+.fund-seal{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:clamp(28px,3.6vw,40px);text-align:left}
+.fund-seal .k{display:block;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.118em;text-transform:uppercase;color:#55707B}
+.fund-logo{display:block;height:clamp(42px,5vw,58px);width:auto;margin:30px 0 26px}
+.fund-seal .d{display:block;border-top:1px solid var(--rule);padding-top:16px;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:0.068em;text-transform:uppercase;color:#55707B}
+.fund-txt h2{font-size:clamp(25px,3.1vw,39px);color:var(--verde)}
 .fund-txt p{color:var(--gris-txt);margin-top:18px;max-width:50ch}
-.cita{margin:26px 0 0;padding:0 0 0 22px;border-left:4px solid var(--rojo);font-family:var(--display);font-style:italic;font-size:clamp(21px,2.5vw,30px);line-height:1.2;color:var(--azul)}
-.cita cite{display:block;margin-top:13px;font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--rojo)}
+.cita{margin:26px 0 0;padding:0 0 0 22px;border-left:4px solid var(--coral);font-family:var(--display);font-style:normal;font-size:clamp(21px,2.5vw,30px);line-height:1.2;color:var(--verde)}
+.cita cite{display:block;margin-top:13px;font-family:var(--body);font-weight:700;font-style:normal;font-size:10.5px;letter-spacing:0.081em;text-transform:uppercase;color:var(--verde)}
 
-.acta-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--azul);padding-bottom:10px;margin:42px 0 0}
-.acta-head .count{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:#8B8FA0}
+.acta-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--verde);padding-bottom:10px;margin:42px 0 0}
+.acta-head .count{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;color:#55707B}
 .acta{list-style:none;margin:0;padding:0}
-.firma{display:flex;align-items:baseline;gap:16px;padding:17px 4px 14px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
-.firma .num{font-family:var(--mono);font-size:11.5px;color:#A2A6B6;flex:0 0 auto;min-width:22px}
-.firma .rubrica{font-family:var(--display);font-size:clamp(20px,2.4vw,28px);line-height:1.05;color:var(--azul);display:flex;align-items:center;min-height:48px}
-.firma .rubrica img.firma-logo{max-height:46px;width:auto;max-width:240px;object-fit:contain;display:block}
-.firma .rol{font-size:14.5px;color:var(--gris-txt);flex:1 1 230px}
-.firma .estado{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8B8FA0;flex:0 0 auto;margin-left:auto}
-.firma--fund{background:var(--azul-tint)}
-.firma--fund .rubrica{font-style:italic;color:var(--rojo)}
-.firma--fund .estado{color:var(--rojo)}
-.firma--open .rubrica{color:#A2A6B6;font-style:italic}
+/* Encabezado de columnas + filas: misma grilla, sin bordes. Los logos van
+   dentro de una caja de alto fijo para que todos queden en la misma banda. */
+.acta-cols{display:none}
+.firma{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:center;padding:16px 0}
+.firma .num{font-family:var(--mono);font-size:11.5px;color:#8FA0A8}
+.firma .rubrica{font-family:var(--display);font-weight:600;font-size:19px;line-height:1.15;color:var(--verde);display:flex;align-items:center;min-height:34px}
+.firma .rubrica img.firma-logo{max-height:30px;width:auto;max-width:150px;object-fit:contain;object-position:left center;display:block}
+.firma .rol{grid-column:1/-1;font-size:14.5px;line-height:1.5;color:var(--gris-txt)}
+.firma .estado{grid-column:1/-1;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.074em;text-transform:uppercase;color:#55707B}
+.firma--fund{background:var(--verde-tint);padding:18px 16px;margin:0 -16px}
+.firma--fund .estado{color:var(--verde)}
+.firma--open .rubrica{color:#8FA0A8}
+@media(min-width:900px){
+  .acta-cols{display:grid;grid-template-columns:30px 180px 1fr 150px;gap:26px;padding:14px 0 0;
+    font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:0.099em;text-transform:uppercase;color:#8FA0A8}
+  .acta-cols span:last-child{text-align:right}
+  .firma{grid-template-columns:30px 180px 1fr 150px;gap:26px;padding:14px 0}
+  .firma .rol,.firma .estado{grid-column:auto}
+  .firma .estado{text-align:right}
+  .firma--fund{padding:14px 16px}
+}
 .acta-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 
 .pasos{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);margin-top:42px;border:1px solid var(--rule)}
 @media(min-width:780px){.pasos{grid-template-columns:repeat(3,1fr)}}
 .paso{background:#fff;padding:clamp(24px,3vw,34px)}
-.paso .p-n{font-family:var(--mono);font-size:11.5px;color:var(--rojo);letter-spacing:.13em}
-.paso h3{font-size:clamp(22px,2.3vw,28px);margin:14px 0 12px;color:var(--azul)}
+.paso .p-n{font-family:var(--mono);font-size:11.5px;color:var(--verde);letter-spacing:.13em}
+.paso h3{font-size:clamp(22px,2.3vw,28px);margin:14px 0 12px;color:var(--verde)}
 .paso p{color:var(--gris-txt);font-size:15.5px}
 
 .split{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,60px);align-items:start}
@@ -99,58 +172,205 @@ section{padding:clamp(58px,8vw,110px) 0}
 .lista li{border-top:1px solid var(--rule);padding:20px 0;display:grid;grid-template-columns:1fr;gap:6px}
 @media(min-width:640px){.lista li{grid-template-columns:.6fr 1.4fr;gap:24px;align-items:baseline}}
 .lista li:last-child{border-bottom:1px solid var(--rule)}
-.lista .t{font-family:var(--display);font-size:20px;color:var(--azul)}
+.lista .t{font-family:var(--display);font-size:20px;color:var(--verde)}
 .lista .d{color:var(--gris-txt);font-size:15.5px}
 
 .caps{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);margin-top:38px;border:1px solid var(--rule)}
 @media(min-width:700px){.caps{grid-template-columns:repeat(4,1fr)}}
 .cap{background:#fff;padding:26px 22px 30px}
-.cap .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:#8B8FA0;display:block}
-.cap .n{font-family:var(--display);font-size:24px;margin-top:12px;display:block;color:var(--azul)}
-.cap--live{background:var(--azul)}
-.cap--live .k{color:rgba(255,255,255,.66)}
+.cap .k{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.081em;text-transform:uppercase;color:#55707B;display:block}
+.cap .n{font-family:var(--display);font-size:24px;margin-top:12px;display:block;color:var(--verde)}
+/* Fondos de bloque en coral y ya no en verde. El verde sigue siendo la base
+   de la marca en titulares y texto; el coral toma los bloques que antes eran
+   verde oscuro. Sobre coral el texto va blanco. */
+/* Esta tarjeta va en coral y no en negro: es la unica activa de las tres y
+   el color la separa de las que dicen "proximamente". Su flecha pasa a
+   blanco, porque en coral se fundia con el fondo y desaparecia. */
+.cap--live{background:var(--coral)}
+.cap--live .flecha{color:#fff}
+.cap--live .k{color:rgba(255,255,255,.8)}
 .cap--live .k:first-child{color:#fff}
 .cap--live .n{color:#fff}
 
-.mapa{margin-top:42px;border-top:2px solid var(--azul)}
+.rutas{display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,40px);margin-top:42px}
+@media(min-width:900px){.rutas{grid-template-columns:repeat(2,1fr);gap:clamp(30px,3.4vw,54px)}}
+.ruta{background:#fff;border:1px solid var(--rule);padding:clamp(24px,3vw,38px);position:relative}
+.ruta--a{border-top:5px solid var(--coral)}
+.ruta--b{border-top:5px solid var(--verde)}
+.ruta .num{position:absolute;top:clamp(14px,1.8vw,20px);right:clamp(18px,2.4vw,28px);font-family:var(--display);font-size:clamp(40px,5.2vw,64px);line-height:1;color:var(--rule)}
+.ruta .k{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.118em;text-transform:uppercase}
+.ruta--a .k{color:var(--verde)}
+.ruta--b .k{color:var(--verde)}
+.ruta h3{font-size:clamp(26px,3.2vw,36px);color:var(--verde);margin-top:12px}
+.ruta .para{color:var(--gris-txt);font-size:15.5px;margin-top:12px}
+@media(min-width:900px){.ruta .para{min-height:4.8em}}
+.niveles{display:grid;gap:14px;margin-top:22px}
+.nivel{background:var(--gris);border-left:3px solid var(--rule);padding:16px 18px}
+.ruta--a .nivel{border-left-color:var(--coral)}
+.ruta--b .nivel{border-left-color:var(--verde)}
+.nivel .n{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:0.081em;text-transform:uppercase;color:var(--verde);display:block}
+.nivel p{color:var(--gris-txt);font-size:14.5px;margin-top:8px}
+
+.etapas{display:grid;grid-template-columns:1fr;gap:clamp(20px,2.6vw,34px);margin-top:42px}
+@media(min-width:900px){.etapas{grid-template-columns:repeat(2,1fr)}}
+.etapa{background:#fff;border:1px solid var(--rule);border-top:5px solid var(--verde);padding:clamp(24px,3vw,36px)}
+.etapa .k{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.118em;text-transform:uppercase;color:var(--verde)}
+.etapa h3{font-size:clamp(22px,2.6vw,31px);color:var(--verde);margin-top:12px}
+.etapa .e-lede{color:var(--gris-txt);font-size:15.5px;margin-top:12px}
+@media(min-width:900px){.etapa .e-lede{min-height:6.4em}}
+.datos{list-style:none;padding:0;margin:22px 0 0;border-top:1px solid var(--rule)}
+.datos li{display:grid;grid-template-columns:1fr;gap:3px;border-bottom:1px solid var(--rule);padding:11px 0;font-size:14.5px;color:var(--gris-txt)}
+@media(min-width:520px){.datos li{grid-template-columns:.62fr 1fr;gap:16px;align-items:baseline}}
+.datos b{font-family:var(--body);font-size:10.5px;letter-spacing:0.081em;text-transform:uppercase;color:var(--verde);font-weight:700}
+.etapa .mas{display:inline-block;margin-top:18px;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:0.081em;text-transform:uppercase;color:var(--verde);text-decoration:none;border-bottom:1px solid var(--coral);padding-bottom:2px}
+.etapa .mas:hover{color:var(--gris-txt);border-bottom-color:var(--gris-txt)}
+.cifra-linea{margin-top:30px;padding-top:24px;border-top:2px solid var(--verde)}
+.cifra{display:block;font-family:var(--display);font-size:clamp(54px,6.6vw,80px);line-height:.88;color:var(--verde);letter-spacing:-.03em}
+.cifra-linea span{display:block;color:var(--gris-txt);font-size:15px;margin-top:10px}
+.faq{margin-top:38px;border-top:1px solid var(--rule);max-width:900px}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;padding:19px 44px 19px 0;position:relative;font-family:var(--display);font-size:clamp(18px,2vw,21px);color:var(--verde);line-height:1.25}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--gris-txt)}
+.faq summary::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:21px;color:var(--verde);line-height:1}
+.faq details[open] summary::after{content:"\2013"}
+.faq details p{color:var(--gris-txt);font-size:15.5px;margin:0 0 22px;max-width:72ch}
+.faq details p + p{margin-top:-10px}
+.tl{margin-top:clamp(40px,5vw,64px)}
+.tl-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:26px}
+@media(min-width:820px){.tl-list{grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,30px)}}
+.tl-item{border-top:2px solid var(--verde);padding-top:18px;position:relative}
+.tl-item::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--coral)}
+.tl-item .k{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.099em;text-transform:uppercase;color:var(--verde);display:block}
+.tl-item .t{font-family:var(--display);font-size:20px;color:var(--verde);display:block;margin-top:9px;line-height:1.15}
+.tl-item .d{color:var(--gris-txt);font-size:14.5px;display:block;margin-top:7px}
+.mapa{margin-top:42px;border-top:2px solid var(--verde)}
 .ciudad{display:flex;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--rule)}
-.ciudad .dot{width:9px;height:9px;border-radius:50%;background:var(--rojo);flex:0 0 auto;transform:translateY(-3px)}
-.ciudad .c-n{font-family:var(--display);font-size:clamp(20px,2.2vw,26px);color:var(--azul)}
-.ciudad .c-d{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#8B8FA0;text-align:right}
+.ciudad .dot{width:9px;height:9px;border-radius:50%;background:var(--coral);flex:0 0 auto;transform:translateY(-3px)}
+.ciudad .c-n{font-family:var(--display);font-size:clamp(20px,2.2vw,26px);color:var(--verde)}
+.ciudad .c-d{margin-left:auto;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:0.068em;text-transform:uppercase;color:#55707B;text-align:right}
 
 .cierre{background:var(--gris)}
-.cierre h2{font-size:clamp(32px,4.8vw,58px);color:var(--azul);text-wrap:balance}
+.cierre h2{font-size:clamp(32px,4.8vw,58px);color:var(--verde);text-wrap:balance}
 .form{margin-top:32px;display:grid;grid-template-columns:1fr;gap:16px;max-width:660px}
 @media(min-width:640px){.form{grid-template-columns:1fr 1fr}}
-.form-block{grid-column:1/-1;font-family:var(--mono);font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--rojo);margin:14px 0 -2px;border-top:1px solid var(--rule);padding-top:22px}
+.form-block{grid-column:1/-1;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.118em;text-transform:uppercase;color:var(--verde);margin:14px 0 -2px;border-top:1px solid var(--rule);padding-top:22px}
 .form-block:first-child{margin-top:0;border-top:0;padding-top:0}
 .field{display:flex;flex-direction:column;gap:7px}
 .field--full{grid-column:1/-1}
-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7B7F8E}
-input,select{background:#fff;border:1px solid var(--rule);color:var(--tinta);font-family:var(--body);font-size:16px;padding:11px 12px;border-radius:2px;width:100%}
-input::placeholder{color:#A9ADBC}
-input:focus,select:focus{outline:0;border-color:var(--azul);box-shadow:0 0 0 3px rgba(0,51,160,.13)}
+label{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.074em;text-transform:uppercase;color:#55707B}
+input,select,textarea{background:#fff;border:1px solid var(--rule);color:var(--tinta);font-family:var(--body);font-size:16px;padding:11px 12px;border-radius:2px;width:100%}
+textarea{resize:vertical;min-height:84px;line-height:1.5}
+.form-card{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:clamp(24px,3vw,34px)}
+.form-card .k{display:block;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.118em;text-transform:uppercase;color:#55707B}
+.form-card .form{margin-top:20px;max-width:none}
+.form-ok{grid-column:1/-1;font-size:15.5px;color:var(--verde);line-height:1.6}
+input::placeholder{color:#6B818A}
+input:focus,select:focus{outline:0;border-color:var(--verde);box-shadow:0 0 0 3px rgba(0,51,160,.13)}
 .check{display:flex;align-items:flex-start;gap:11px;font-family:var(--body);font-size:14px;letter-spacing:0;text-transform:none;color:var(--gris-txt);cursor:pointer;margin-top:6px;grid-column:1/-1}
-.check input{width:17px;height:17px;flex:0 0 auto;margin-top:3px;accent-color:var(--rojo)}
-.check b{color:var(--rojo);font-weight:500;font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase}
-.check a{color:var(--azul);text-decoration:underline}
+.check input{width:17px;height:17px;flex:0 0 auto;margin-top:3px;accent-color:var(--verde)}
+.check b{color:var(--verde);font-weight:700;font-family:var(--body);font-size:10px;letter-spacing:0.068em;text-transform:uppercase}
+.check a{color:var(--verde);text-decoration:underline}
 .form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:8px}
-.msg{font-family:var(--mono);font-size:12px;color:var(--rojo)}
-.aliados{margin-top:clamp(48px,6vw,76px);padding-top:clamp(30px,4vw,42px);border-top:2px solid var(--azul)}
-.aliados h3{font-size:clamp(22px,2.5vw,31px);color:var(--azul);font-family:var(--display);font-weight:600}
+.msg{font-family:var(--mono);font-size:12px;color:var(--alerta)}
+.msg--ok{color:#0F7A3D}
+/* .field usa display:flex, que le gana al [hidden] del navegador: sin esto los
+   campos condicionales (otra nacionalidad / otro país) se ven siempre. */
+[hidden]{display:none !important}
+.hint{font-family:var(--mono);font-size:10.5px;color:#9A9EAD;letter-spacing:.04em;text-transform:none}
+.opt{color:#6B818A}
+.field--bad input,.field--bad select{border-color:var(--alerta);box-shadow:0 0 0 3px rgba(179,38,30,.12)}
+.chk-group{grid-column:1/-1;display:grid;gap:9px;margin-top:2px}
+@media(min-width:640px){.chk-group{grid-template-columns:1fr 1fr}}
+.chk{display:flex;align-items:center;gap:9px;font-family:var(--body);font-size:14.5px;text-transform:none;letter-spacing:0;color:var(--tinta);cursor:pointer}
+.chk input{width:16px;height:16px;flex:0 0 auto;accent-color:var(--verde)}
+.phone-row{display:flex;gap:8px}
+.phone-row select{width:auto;flex:0 0 auto;font-family:var(--mono);font-size:14px}
+input[type=file]{padding:9px 10px;font-family:var(--mono);font-size:12.5px;color:var(--gris-txt)}
+input[type=file]::file-selector-button{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.068em;text-transform:uppercase;color:#fff;background:var(--verde);border:0;border-radius:2px;padding:8px 12px;margin-right:12px;cursor:pointer}
+input[type=file]::file-selector-button:hover{background:var(--verde-hover)}
+input[type=date]{font-family:var(--body)}
+.btn[disabled]{opacity:.55;cursor:default}
+.aliados{margin-top:clamp(22px,2.6vw,32px);padding-top:clamp(24px,3vw,32px);border-top:2px solid var(--verde)}
+.aliados h3{font-size:clamp(22px,2.5vw,31px);color:var(--verde);font-family:var(--display);font-weight:600}
 .aliados p{color:var(--gris-txt);margin-top:14px;max-width:56ch;font-size:15.5px}
 .contacto{margin-top:26px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:baseline}
-.contacto a{font-family:var(--display);font-size:clamp(20px,2.3vw,27px);color:var(--rojo);text-decoration:none;border-bottom:2px solid rgba(218,41,28,.24)}
-.contacto a:hover{border-bottom-color:var(--rojo)}
-.contacto .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8B8FA0;display:block;margin-bottom:7px}
+.contacto a{font-family:var(--display);font-size:clamp(20px,2.3vw,27px);color:var(--verde);text-decoration:none;border-bottom:2px solid rgba(15,61,46,.24)}
+.contacto a:hover{border-bottom-color:var(--verde)}
+.contacto .k{font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.074em;text-transform:uppercase;color:#55707B;display:block;margin-bottom:7px}
 
-footer{background:var(--azul);color:#fff;padding:38px 0 56px;font-size:13.5px}
+footer{background:var(--paper);color:var(--tinta);padding:38px 0 56px;font-size:13.5px;border-top:1px solid var(--rule)}
 .f-in{display:flex;flex-wrap:wrap;gap:20px 34px;align-items:center;justify-content:space-between}
-.f-in .mono{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.f-in .mono{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:0.062em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
 .f-links{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px}
-.f-links a{color:rgba(255,255,255,.82);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:1px}
-.f-links a:hover{color:#fff;border-bottom-color:#fff}
+.f-links a{color:var(--gris-txt);text-decoration:none;border-bottom:1px solid rgba(15,61,46,.28);padding-bottom:1px}
+.f-links a:hover{color:var(--verde);border-bottom-color:var(--verde)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+
+/* ── Franja de la Semana de la Pyme (13, 14 y 15 de octubre de 2026) ──
+   Va en verde a proposito: se lee como aviso con fecha y no como una seccion
+   mas, asi no rompe la alternancia gris/papel del resto de la portada.
+   CUANDO PASE OCTUBRE: sacar el <section class="franja-sem"> del body. */
+.franja-sem{background:var(--negro);color:#fff;padding:clamp(26px,3.4vw,38px) 0}
+.franja-in{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,2.6vw,38px)}
+.franja-sem img{height:clamp(48px,5.4vw,66px);width:auto;display:block;flex:0 0 auto}
+.franja-sem .txt{flex:1 1 300px;min-width:260px}
+/* El kicker va en hueso y no en coral: coral sobre el verde da 3,59 y es
+   texto de 10 px. En el hero de /semanadelapyme el mismo kicker si va en
+   coral, porque sobre el negro de la campana da 5,14. */
+.franja-sem .k{display:block;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:0.105em;text-transform:uppercase;color:var(--paper)}
+.franja-sem .t{display:block;font-family:var(--display);font-size:clamp(19px,2.2vw,25px);font-weight:600;letter-spacing:-.02em;margin-top:8px;text-wrap:balance}
+.franja-sem .d{display:block;font-size:14.5px;color:rgba(255,255,255,.76);margin-top:7px;max-width:52ch}
+/* Sobre la franja coral el boton va BLANCO: en coral se funde con el fondo y
+   desaparece. El texto usa un coral mas oscuro para pasar contraste. */
+.franja-sem .btn{background:var(--coral);color:#fff;flex:0 0 auto}
+.franja-sem .btn:hover{background:var(--coral-hover)}
+
+/* Pacto Pyme · sistema de marca oficial */
+:root{
+  --verde:#0033A0;--verde-hover:#002478;--verde-tint:#EDF1FB;
+  --coral:#DA291C;--coral-hover:#B71F14;--negro:#101014;
+  --salvia:#9FB6E8;--alerta:#B3261E;--tinta:#101014;
+  --paper:#FFFFFF;--gris:#F4F5F9;--rule:#E1E4EF;--gris-txt:#565A6B;
+  --display:"Fraunces",Georgia,serif;--body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+body{background:var(--paper)}
+.nav{background:rgba(255,255,255,.96)}
+.mark .wm{font-family:var(--body);font-size:19px;line-height:.94;display:flex;flex-direction:column;gap:1px;text-transform:uppercase;color:var(--verde)}
+.mark .wm span{font-weight:400;font-size:10.5px;letter-spacing:.2em;color:var(--coral);margin:0}
+.mark{min-height:44px}
+.eyebrow{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--coral)}
+.eyebrow::after{background:linear-gradient(to right,var(--coral) 0,var(--coral) 34px,var(--rule) 34px)}
+.btn{background:var(--coral);border-radius:2px}
+.btn:hover{background:var(--coral-hover)}
+.hero{background:var(--verde);color:#fff}
+.hero .eyebrow{color:#B9C9EC}
+.hero .eyebrow::after{background:linear-gradient(to right,var(--coral) 0,var(--coral) 34px,rgba(255,255,255,.24) 34px)}
+.hero h1,.hero h1 em{color:#fff}
+.hero h1 em{text-decoration-color:var(--coral)}
+.hero-lede{color:rgba(255,255,255,.84)}
+.hero-lede strong{color:#fff}
+.hero .btn--ghost{color:#fff;border-color:rgba(255,255,255,.8)}
+.hero .btn--ghost:hover{background:#fff;color:var(--verde)}
+.hero-art rect{fill:#fff}
+.hero-photo{border-left:1px solid rgba(255,255,255,.18)}
+.hero-dots button{position:relative;width:44px;height:44px;background:transparent}
+.hero-dots button::after{content:"";position:absolute;left:8px;top:19px;width:28px;height:5px;border-radius:3px;background:rgba(255,255,255,.5)}
+.hero-dots button:hover::after{background:rgba(255,255,255,.8)}
+.hero-dots button.is-on::after{background:var(--coral)}
+@media(min-width:960px){.hero-photo::after{background:linear-gradient(to right,var(--verde) 0%,var(--verde) 4%,rgba(0,51,160,.72) 22%,rgba(0,51,160,.3) 40%,rgba(0,51,160,0) 62%)}}
+.h-sec,.fund-txt h2,.cita,.firma .rubrica,.paso h3,.lista .t,.cap .n,.ruta h3{color:var(--verde)}
+.fund-seal,.beca-foto{border-radius:2px}
+.cap--live{background:var(--coral)}
+.ruta,.fund-seal{box-shadow:none}
+footer{background:var(--verde);color:#fff;border-top:0}
+footer .f-links a{color:rgba(255,255,255,.84);border-bottom-color:rgba(255,255,255,.28)}
+footer .f-links a:hover{color:#fff;border-bottom-color:#fff}
+footer .f-links a{min-height:44px;display:inline-flex;align-items:center}
+footer svg rect{fill:#fff}
+@media(max-width:959px){.hero-photo{border-left:0;border-top:1px solid rgba(255,255,255,.18)}}
+
 </style>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
@@ -160,387 +380,166 @@ footer{background:var(--azul);color:#fff;padding:38px 0 56px;font-size:13.5px}
 
 <nav class="nav">
   <div class="nav-in">
-    <a class="mark" href="#top"><svg class="" viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg><span class="wm">PACTO<span>PYME</span></span></a>
+    <a class="mark" href="#top"><svg class="" viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg><span class="wm">Pacto<span>Pyme</span></span></a>
     <span class="nav-tag">Si las pymes crecen, Chile crece</span>
-    <a class="btn" href="#comunidad">Quiero ser parte</a>
+    <a class="btn" href="/horeca">Ver la beca</a>
   </div>
 </nav>
 
 <main id="top">
 
 <section class="hero">
-  <svg class="hero-star" viewBox="0 0 100 100" width="300" height="300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#FFFFFF"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#FFFFFF"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#FFFFFF"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#FFFFFF"/></svg>
-  <div class="wrap">
-    <p class="eyebrow">Un pacto nacional por las pymes &middot; Chile 2026</p>
-    <h1>Si las pymes crecen,<em>Chile crece.</em></h1>
-    <p class="hero-lede">
-      Empresas, gremios, sociedad civil e instituciones p&uacute;blicas poni&eacute;ndose de acuerdo en una
-      sola cosa: que las pymes de Chile crezcan. Cada una aporta lo que tiene &mdash;recursos, redes,
-      conocimiento, territorio&mdash; y el Pacto lo convierte en <strong>formaci&oacute;n gratuita para que
-      las pymes vendan m&aacute;s, gasten menos y operen mejor</strong>. Inteligencia artificial, herramientas
-      digitales, finanzas, gesti&oacute;n: lo que cada sector necesita para dar el salto.
-    </p>
-    <p class="hero-lede" style="margin-top:16px">
-      Por separado, cada aporte alcanza para un programa. Juntos, alcanza para mover el pa&iacute;s.
-    </p>
+  <svg class="hero-art" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg>
 
-    <div class="conv">
-      <span class="k">Primera convocatoria &middot; agosto 2026</span>
-      <h2>Inteligencia artificial para restaurantes, hoteles y casinos.</h2>
-      <p>
-        El Pacto arranca por el sector que atiende a Chile todos los d&iacute;as. Formaci&oacute;n sin costo,
-        en seis ciudades, para due&ntilde;os y equipos de negocios HORECA. Los cupos de cada ciudad son
-        limitados y se asignan por orden de llegada a la comunidad.
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Un pacto nacional por las pymes &middot; Chile 2026</p>
+      <h1>Si las pymes crecen,<em>Chile crece.</em></h1>
+      <p class="hero-lede">
+        Pacto Pyme es un acuerdo entre empresas, gremios e instituciones para que las pymes de Chile
+        <strong>vendan m&aacute;s, gasten menos y operen mejor</strong>. Cada una aporta lo que tiene
+        &mdash;recursos, redes, conocimiento, territorio&mdash; y el Pacto lo convierte en formaci&oacute;n
+        gratuita.
       </p>
-      <div class="conv-cta">
-        <a class="btn" href="#comunidad">Sumarse a la comunidad</a>
-        <a class="btn btn--ghost" href="#pymes">Ver qu&eacute; incluye</a>
+      <div class="conv-cta" style="margin-top:30px">
+        <a class="btn" href="/horeca">Ver la beca HORECA</a>
+        <a class="btn btn--ghost" href="/empresas">Quiero aportar como empresa</a>
       </div>
     </div>
   </div>
+
+  <figure class="hero-photo" data-carrusel>
+    <img class="is-active" src="/assets/pyme-hero-4.webp" width="1000" height="750" fetchpriority="high" decoding="async"
+         style="object-position:50% 28%"
+         alt="Due&ntilde;a de una tienda de plantas y objetos revisando una tablet entre sus estantes.">
+    <img src="/assets/pyme-hero-2.webp" width="1000" height="750" decoding="async"
+         style="object-position:50% 72%"
+         alt="Due&ntilde;o de un almac&eacute;n de barrio con una tablet en las manos, entre sus estanter&iacute;as.">
+    <div class="hero-dots" role="group" aria-label="Cambiar la imagen del hero">
+      <button type="button" class="is-on" aria-label="Imagen 1"></button>
+      <button type="button" aria-label="Imagen 2"></button>
+    </div>
+  </figure>
 </section>
 
-<section class="fundadora">
-  <div class="wrap fund-grid">
-    <div class="fund-seal">
-      <span class="k">Empresa fundadora</span>
-        <img class="fund-logo" src="/assets/abastible-logo.png" alt="Abastible">
-      <span class="d">Primera firma &middot; julio 2026</span>
+<section class="franja-sem">
+  <div class="wrap franja-in">
+    <img src="/assets/semana-de-la-pyme.svg" alt="Semana de la Pyme">
+    <div class="txt">
+      <span class="k">13, 14 y 15 de octubre &middot; inscripciones abiertas</span>
+      <span class="t">Tres actividades gratuitas en la Semana de la Pyme</span>
+      <span class="d">Dos clases en vivo por internet y el lanzamiento nacional del Pacto,
+      presencial en Santiago.</span>
     </div>
-    <div class="fund-txt">
-      <h2>El Pacto empieza con una visi&oacute;n, no con un presupuesto.</h2>
-      <p>
-        Abastible no lleg&oacute; a comprar un programa de capacitaci&oacute;n. Lleg&oacute; con una
-        convicci&oacute;n propia sobre el rol que una empresa grande puede jugar en el crecimiento de
-        las pymes de Chile, y decidi&oacute; firmar primero para que el Pacto existiera.
-      </p>
-      <blockquote class="cita">
-        Si las pymes crecen, Chile crece.
-      </blockquote>
-      <p>
-        Esa frase es el origen del Pacto y su regla de decisi&oacute;n. Lo que sigue es abrirla: que
-        otras empresas e instituciones la hagan suya y sumen su propio aporte.
-      </p>
-    </div>
+    <a class="btn" href="/semanadelapyme">Ver el programa</a>
   </div>
 </section>
 
-<section id="acta">
+<section id="programas" style="background:var(--paper)">
   <div class="wrap">
-    <p class="eyebrow">Qui&eacute;nes lo firman</p>
-    <h2 class="h-sec">El acta del Pacto.</h2>
-    <p class="sec-lede">Cada actor pone lo que tiene: aporte, red, convocatoria o articulaci&oacute;n
-    territorial. Ninguno podr&iacute;a hacerlo solo.</p>
-
-    <div class="acta-head">
-      <span class="eyebrow">Acta de firmas</span>
-      <span class="count">Chile &middot; 2026</span>
-    </div>
-    <ol class="acta">
-      <li class="firma firma--fund">
-        <span class="num">01</span>
-        <span class="rubrica"><img class="firma-logo" src="/assets/abastible-logo.png" alt="Abastible"></span>
-        <span class="rol">Empresa fundadora. Abre el Pacto: aporta su franquicia tributaria, su red de pymes y su nombre.</span>
-        <span class="estado">Fundadora</span>
-      </li>
-      <li class="firma">
-        <span class="num">02</span>
-        <span class="rubrica"><img class="firma-logo" src="/assets/acti-logo.png" alt="ACTI"></span>
-        <span class="rol">Gremio tecnol&oacute;gico. Contenido experto, relatores y validaci&oacute;n t&eacute;cnica en IA.</span>
-        <span class="estado">Aliado</span>
-      </li>
-      <li class="firma">
-        <span class="num">03</span>
-        <span class="rubrica"><img class="firma-logo" src="/assets/asech-logo.png" alt="ASECH"></span>
-        <span class="rol">Asociaci&oacute;n de Emprendedores de Chile. Convocatoria y llegada directa a la pyme.</span>
-        <span class="estado">Aliado</span>
-      </li>
-      <li class="firma">
-        <span class="num">04</span>
-        <span class="rubrica">Mujeres Emprendedoras</span>
-        <span class="rol">Red femenina. Asegura que las emprendedoras no queden fuera del programa.</span>
-        <span class="estado">Aliado</span>
-      </li>
-      <li class="firma">
-        <span class="num">05</span>
-        <span class="rubrica">Municipalidades</span>
-        <span class="rol">Difusi&oacute;n local, espacios y convocatoria en las seis ciudades del programa.</span>
-        <span class="estado">En coordinaci&oacute;n</span>
-      </li>
-      <li class="firma">
-        <span class="num">06</span>
-        <span class="rubrica"><img class="firma-logo" src="/assets/desafio-latam-logo.png" alt="Desaf&iacute;o Latam"></span>
-        <span class="rol">Operador del Pacto. Articula los aportes y beneficios de cada firmante, dise&ntilde;a la ruta formativa y ejecuta las formaciones como OTEC certificada.</span>
-        <span class="estado">Operador y ejecutor</span>
-      </li>
-      <li class="firma firma--open">
-        <span class="num">07</span>
-        <span class="rubrica">Su organizaci&oacute;n aqu&iacute;</span>
-        <span class="rol">Cada organizaci&oacute;n que suma su aporte ampl&iacute;a lo que el Pacto puede ense&ntilde;ar y a cu&aacute;ntas pymes llega.</span>
-        <span class="estado">Firma abierta</span>
-      </li>
-    </ol>
-    <div class="acta-cta">
-      <a class="btn btn--ghost" href="#comunidad">Sumarse a la comunidad</a>
-    </div>
-  </div>
-</section>
-
-<section id="mecanismo" style="background:var(--gris)">
-  <div class="wrap">
-    <p class="eyebrow">El mecanismo</p>
-    <h2 class="h-sec">Lo que una organizaci&oacute;n sola no puede montar, varias s&iacute;.</h2>
-    <div class="pasos">
-      <div class="paso">
-        <span class="p-n">Paso 01</span>
-        <h3>Cada uno aporta lo suyo</h3>
-        <p>Hay muchas formas de firmar. Franquicia tributaria de capacitaci&oacute;n, presupuesto de
-        sostenibilidad, contenido y relatores propios, la red de pymes de la cadena, salas, difusi&oacute;n
-        o convocatoria territorial. Ning&uacute;n aporte es demasiado chico.</p>
-      </div>
-      <div class="paso">
-        <span class="p-n">Paso 02</span>
-        <h3>El Pacto lo multiplica</h3>
-        <p>Los aportes se consolidan en una sola infraestructura compartida: plataforma, contenidos,
-        relatores, convocatoria y medici&oacute;n. Cada firma nueva baja el costo por persona formada y
-        ampl&iacute;a lo que el Pacto puede ense&ntilde;ar.</p>
-      </div>
-      <div class="paso">
-        <span class="p-n">Paso 03</span>
-        <h3>Y la pyme recibe una sola cosa</h3>
-        <p>No seis programas sueltos: una ruta de formaci&oacute;n coherente y gratuita. Para la empresa
-        que aporta v&iacute;a franquicia, adem&aacute;s, el desembolso se recupera v&iacute;a impuesto a la renta.</p>
-      </div>
-    </div>
-    <p class="nota">
-      Cada aporte se estructura con el &aacute;rea correspondiente de la organizaci&oacute;n que firma:
-      capacitaci&oacute;n, sostenibilidad, asuntos corporativos o fomento.
-    </p>
-  </div>
-</section>
-
-<section id="pymes">
-  <div class="wrap split">
-    <div>
-      <p class="eyebrow">Para la pyme</p>
-      <h2 class="h-sec">Gratis, aplicado y con acompa&ntilde;amiento.</h2>
-      <p class="sec-lede">No son charlas motivacionales. Es formaci&oacute;n que el negocio puede usar el
-      lunes siguiente, y que crece a medida que se suman firmantes con nuevos temas.</p>
-    </div>
-    <ul class="lista">
-      <li><span class="t">Formaci&oacute;n certificada</span><span class="d">Cursos e&#8209;learning con certificaci&oacute;n SENCE, sin costo para la pyme ni para el trabajador. Hoy en inteligencia artificial y transformaci&oacute;n digital; ma&ntilde;ana, en lo que traiga cada nuevo firmante.</span></li>
-      <li><span class="t">Talleres en vivo</span><span class="d">Sesiones sincr&oacute;nicas y mentor&iacute;as aplicadas al negocio: vender m&aacute;s, bajar costos, ordenar la operaci&oacute;n, manejar las finanzas y usar bien las herramientas digitales.</span></li>
-      <li><span class="t">Un hito presencial</span><span class="d">Una sesi&oacute;n magistral abierta en cada ciudad, con alianza municipal y las organizaciones firmantes presentes.</span></li>
-      <li><span class="t">Beneficios de los aliados</span><span class="d">Cada organizaci&oacute;n del Pacto aporta algo extra para la pyme que participa. En el Cap&iacute;tulo HORECA, Welcome Back activa su plataforma de men&uacute; digital, fidelizaci&oacute;n y marketing, con acompa&ntilde;amiento para implementarla.</span></li>
-    </ul>
-  </div>
-</section>
-
-<section id="capitulos" style="background:var(--gris)">
-  <div class="wrap">
-    <p class="eyebrow">Cap&iacute;tulos</p>
-    <h2 class="h-sec">Cada firmante abre el cap&iacute;tulo que sabe hacer.</h2>
-    <p class="sec-lede">Un cap&iacute;tulo puede ser un sector &mdash;donde la empresa ya tiene su red de
-    pymes&mdash; o una materia que domina. As&iacute; la convocatoria no parte de cero y el contenido lo
-    ense&ntilde;a quien de verdad sabe.</p>
-    <div class="caps">
-      <div class="cap cap--live">
-        <span class="k">Cap&iacute;tulo 01 &middot; en marcha</span>
-        <span class="n">HORECA</span>
-        <span class="k" style="margin-top:10px">IA y digitalizaci&oacute;n para restaurantes, hoteles y casinos</span>
-      </div>
+    <p class="eyebrow">Programas</p>
+    <h2 class="h-sec">Formaci&oacute;n gratuita, un programa a la vez.</h2>
+    <p class="sec-lede">Cada programa lo abre la organizaci&oacute;n que mejor conoce ese mundo. As&iacute;
+    la convocatoria no parte de cero y el contenido lo ense&ntilde;a quien de verdad sabe.</p>
+    <div class="caps caps--3">
+      <a class="cap cap--live" href="/horeca">
+        <span class="k">En marcha &middot; postulaciones abiertas</span>
+        <span class="n">Becas HORECA</span>
+        <span class="k" style="margin-top:10px">Inteligencia artificial y herramientas digitales para
+        restaurantes, cafeter&iacute;as, hoteles, casinos y catering</span>
+        <span class="flecha">Ver la beca &rarr;</span>
+      </a>
       <div class="cap">
-        <span class="k">Cap&iacute;tulo 02 &middot; abierto</span>
+        <span class="k">Pr&oacute;ximamente</span>
         <span class="n">Finanzas</span>
-        <span class="k" style="margin-top:10px">Instrumentos financieros y gesti&oacute;n para el due&ntilde;o de pyme</span>
+        <span class="k" style="margin-top:10px">Instrumentos financieros y gesti&oacute;n para el
+        due&ntilde;o de pyme</span>
       </div>
       <div class="cap">
-        <span class="k">Cap&iacute;tulo 03 &middot; abierto</span>
+        <span class="k">Pr&oacute;ximamente</span>
         <span class="n">Comercio</span>
         <span class="k" style="margin-top:10px">Retail de barrio, almacenes y proveedores</span>
       </div>
-      <div class="cap">
-        <span class="k">Cap&iacute;tulo 04 &middot; abierto</span>
-        <span class="n">Su foco</span>
-        <span class="k" style="margin-top:10px">Lo define la organizaci&oacute;n que firma</span>
+    </div>
+  </div>
+</section>
+
+<section id="apoyo" style="background:var(--gris)">
+  <div class="wrap apoyo-in">
+    <div class="apoyo-set">
+      <span class="k">Empresa impulsora</span>
+      <div class="apoyo-logos">
+        <img class="l-abastible" src="/assets/abastible-logo.png" alt="Abastible" loading="lazy">
+      </div>
+    </div>
+    <div class="apoyo-set">
+      <span class="k">Apoyan</span>
+      <div class="apoyo-logos">
+        <img class="l-acti" src="/assets/acti-logo.svg" alt="ACTI" loading="lazy">
+        <img class="l-mineco" src="/assets/ministerio-economia-logo.png" width="360" height="327"
+             alt="Ministerio de Econom&iacute;a, Fomento y Turismo &middot; Gobierno de Chile" loading="lazy">
+      </div>
+    </div>
+    <div class="apoyo-set">
+      <span class="k">Organiza y ejecuta</span>
+      <div class="apoyo-logos">
+        <img class="l-dl" src="/assets/desafio-latam-logo.png" alt="Desaf&iacute;o Latam" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
-<section id="territorio">
-  <div class="wrap split">
+<section class="cierre" id="aportar" style="background:var(--paper)">
+  <div class="wrap split beca-grid">
     <div>
-      <p class="eyebrow">Territorio</p>
-      <h2 class="h-sec">Seis ciudades, no solo Santiago.</h2>
-      <p class="sec-lede">Cada ciudad recibe cupos propios y una sesi&oacute;n magistral presencial. Las
-      fechas se coordinan con cada municipio.</p>
-    </div>
-    <div class="mapa">
-      <div class="ciudad"><span class="dot"></span><span class="c-n">Antofagasta</span><span class="c-d">Casinos + restaurantes</span></div>
-      <div class="ciudad"><span class="dot"></span><span class="c-n">Iquique</span><span class="c-d">Hoteles + restaurantes</span></div>
-      <div class="ciudad"><span class="dot"></span><span class="c-n">Santiago</span><span class="c-d">Kick&#8209;off nacional</span></div>
-      <div class="ciudad"><span class="dot"></span><span class="c-n">Concepci&oacute;n</span><span class="c-d">Seg&uacute;n demanda</span></div>
-      <div class="ciudad"><span class="dot"></span><span class="c-n">Temuco</span><span class="c-d">Restaurantes</span></div>
-      <div class="ciudad"><span class="dot"></span><span class="c-n">Puerto Montt</span><span class="c-d">Seg&uacute;n demanda</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="cierre" id="comunidad">
-  <div class="wrap">
-    <p class="eyebrow">Comunidad Pacto Pyme &middot; Cap&iacute;tulo 01 HORECA</p>
-    <h2>Suma tu negocio a la comunidad.</h2>
-    <p class="sec-lede" style="max-width:58ch">
-      Ser parte no cuesta nada y no compromete a nada. La comunidad recibe primero los cupos de su
-      ciudad, las fechas de las sesiones presenciales y los beneficios que van sumando los aliados
-      del Pacto.
-    </p>
-
-    <div class="form">
-      <p class="form-block">La empresa</p>
-      <div class="field">
-        <label for="rut">RUT de la empresa</label>
-        <input id="rut" type="text" placeholder="76.543.210-K">
-      </div>
-      <div class="field">
-        <label for="tamano">Tama&ntilde;o seg&uacute;n ventas anuales</label>
-        <select id="tamano">
-          <option value="">Seleccione</option>
-          <option>Microempresa &middot; hasta 2.400 UF</option>
-          <option>Peque&ntilde;a &middot; 2.400 a 25.000 UF</option>
-          <option>Mediana &middot; 25.000 a 100.000 UF</option>
-          <option>Grande &middot; sobre 100.000 UF</option>
-          <option>No lo s&eacute;</option>
-        </select>
-      </div>
-      <div class="field field--full">
-        <label for="rubro">Rubro</label>
-        <select id="rubro">
-          <optgroup label="Capítulo 01 · HORECA — convocatoria abierta">
-            <option>Restaurante, caf&eacute; o fuente de soda</option>
-            <option>Hotel, hostal, caba&ntilde;as u otro alojamiento</option>
-            <option>Casino institucional o catering</option>
-            <option>Bar, pub o discoteca</option>
-            <option>Food truck, delivery o cocina oculta</option>
-            <option>Panader&iacute;a, pasteler&iacute;a o rotiser&iacute;a</option>
-          </optgroup>
-          <optgroup label="Otros rubros — próximos capítulos">
-            <option>Comercio al por menor</option>
-            <option>Comercio al por mayor y distribuci&oacute;n</option>
-            <option>Industria manufacturera y alimentos</option>
-            <option>Construcci&oacute;n</option>
-            <option>Transporte y almacenamiento</option>
-            <option>Turismo, cultura y entretenimiento</option>
-            <option>Servicios profesionales y t&eacute;cnicos</option>
-            <option>Tecnolog&iacute;a y comunicaciones</option>
-            <option>Salud y cuidados</option>
-            <option>Educaci&oacute;n y capacitaci&oacute;n</option>
-            <option>Agricultura, pesca y silvicultura</option>
-            <option>Servicios personales y otros</option>
-          </optgroup>
-        </select>
-      </div>
-      <div class="field">
-        <label for="region">Regi&oacute;n donde opera</label>
-        <select id="region">
-          <option value="">Seleccione</option>
-          <option>Arica y Parinacota</option><option>Tarapac&aacute;</option><option>Antofagasta</option>
-          <option>Atacama</option><option>Coquimbo</option><option>Valpara&iacute;so</option>
-          <option>Metropolitana de Santiago</option><option>Libertador General Bernardo O'Higgins</option>
-          <option>Maule</option><option>&Ntilde;uble</option><option>Biob&iacute;o</option>
-          <option>La Araucan&iacute;a</option><option>Los R&iacute;os</option><option>Los Lagos</option>
-          <option>Ays&eacute;n del General Carlos Ib&aacute;&ntilde;ez del Campo</option>
-          <option>Magallanes y de la Ant&aacute;rtica Chilena</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="comuna">Ciudad o comuna</label>
-        <input id="comuna" type="text" placeholder="Ej: Puerto Varas" autocomplete="address-level2">
-      </div>
-
-      <p class="form-block">Qui&eacute;n se inscribe</p>
-      <div class="field">
-        <label for="nombre">Nombre y apellido</label>
-        <input id="nombre" type="text" placeholder="Su nombre" autocomplete="name">
-      </div>
-      <div class="field">
-        <label for="cargo">Rol en la empresa</label>
-        <input id="cargo" type="text" placeholder="Due&ntilde;o, administrador, jefe de local">
-      </div>
-      <div class="field">
-        <label for="email">Correo</label>
-        <input id="email" type="email" placeholder="nombre@sunegocio.cl" autocomplete="email">
-      </div>
-      <div class="field">
-        <label for="fono">Tel&eacute;fono o WhatsApp</label>
-        <input id="fono" type="tel" placeholder="+56 9 ..." autocomplete="tel">
-      </div>
-
-      <label class="check" for="ok">
-        <input id="ok" type="checkbox">
-        <span>Autorizo el uso de estos datos para gestionar mi cupo, tramitar la beca SENCE y medir los
-        resultados del programa, seg&uacute;n la <a href="/politica-de-privacidad.html">pol&iacute;tica de
-        privacidad</a>. <b>Requerido</b></span>
-      </label>
-      <label class="check" for="ok2">
-        <input id="ok2" type="checkbox">
-        <span>Quiero recibir los beneficios de los aliados del Pacto y autorizo que los datos de mi empresa
-        &mdash; RUT, rubro, tama&ntilde;o y ciudad &mdash; se compartan con <b>Abastible</b> y
-        <b>Welcome Back</b> para activarlos y medir el impacto del programa en mi negocio. <b>Opcional</b></span>
-      </label>
-
-      <div class="form-foot">
-        <button class="btn" id="enviar">Sumarse a la comunidad</button>
-        <span class="msg" id="msg" role="status" aria-live="polite"></span>
-      </div>
-      <p class="nota" style="grid-column:1/-1">
-        El RUT de la empresa es requisito para tramitar la beca SENCE y para reportar resultados por
-        tama&ntilde;o de empresa. Lo que se comparte con los aliados son datos de la empresa, no datos
-        personales para uso comercial, y se rige por un acuerdo de tratamiento de datos entre las
-        organizaciones del Pacto. Puede revocar esta autorizaci&oacute;n en cualquier momento escribiendo
-        a contacto@pactopyme.cl.
-      </p>
-    </div>
-
-    <div class="aliados">
-      <h3>&iquest;Su organizaci&oacute;n quiere sumarse al Pacto?</h3>
-      <p>
-        Empresas, gremios e instituciones que quieran aportar y abrir su propio cap&iacute;tulo:
-        conversemos. Treinta minutos alcanzan para revisar las formas de aportar y qu&eacute; foco le calza
-        a su organizaci&oacute;n.
-      </p>
-      <div class="contacto">
-        <div><span class="k">Escr&iacute;banos</span><a href="mailto:contacto@pactopyme.cl">contacto@pactopyme.cl</a></div>
+      <p class="eyebrow">Firma abierta</p>
+      <h2>&iquest;Quiere aportar a las pymes?</h2>
+      <p class="sec-lede">Empresas, gremios e instituciones que quieran sumar su aporte y abrir su propio
+      programa: ah&iacute; explicamos c&oacute;mo funciona el Pacto, qui&eacute;nes lo firman y las formas
+      de participar.</p>
+      <div class="conv-cta" style="margin-top:26px">
+        <a class="btn" href="/empresas">Sumar mi organizaci&oacute;n</a>
       </div>
     </div>
+    <figure class="beca-foto">
+      <img src="/assets/beca-horeca.webp" width="1000" height="750" loading="lazy" decoding="async"
+           alt="Due&ntilde;a de un local de comida usando una tablet detr&aacute;s de su mes&oacute;n.">
+    </figure>
   </div>
 </section>
 
 </main>
 
+<script>
+(function(){
+  var fig = document.querySelector('[data-carrusel]');
+  if (!fig) return;
+  var imgs = fig.querySelectorAll('img');
+  var dots = fig.querySelectorAll('.hero-dots button');
+  var i = 0, timer;
+  function mostrar(n){
+    i = n;
+    imgs.forEach(function(im, k){ im.classList.toggle('is-active', k === n); });
+    dots.forEach(function(d, k){ d.classList.toggle('is-on', k === n); });
+  }
+  dots.forEach(function(d, n){
+    d.addEventListener('click', function(){ mostrar(n); clearInterval(timer); });
+  });
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    timer = setInterval(function(){ mostrar((i + 1) % imgs.length); }, 7000);
+  }
+})();
+</script>
+
 <footer>
   <div class="wrap f-in">
-    <span class="mono"><svg class="" viewBox="0 0 100 100" width="26" height="26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#FFFFFF"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#FFFFFF"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#FFFFFF"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#FFFFFF"/></svg> Pacto Pyme &middot; Si las pymes crecen, Chile crece</span>
+    <span class="mono"><svg class="" viewBox="0 0 100 100" width="26" height="26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg> Pacto Pyme &middot; Si las pymes crecen, Chile crece</span>
     <nav class="f-links">
-      <a href="/manual-de-marca.html">Manual de marca</a>
+      <a href="/semanadelapyme">Semana de la Pyme</a>
       <a href="/politica-de-privacidad.html">Pol&iacute;tica de privacidad</a>
-      <a href="https://www.linkedin.com/company/pactopyme" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
     <span class="mono">contacto@pactopyme.cl</span>
   </div>
 </footer>
-
-<script>
-document.getElementById('enviar').addEventListener('click', function(){
-  var msg = document.getElementById('msg');
-  var rut = document.getElementById('rut').value.trim();
-  var mail = document.getElementById('email').value.trim();
-  if (!rut){ msg.textContent = 'Falta el RUT de la empresa.'; return; }
-  if (!mail || mail.indexOf('@') < 1){ msg.textContent = 'Revise el correo de contacto.'; return; }
-  if (!document.getElementById('ok').checked){ msg.textContent = 'Marque la autorizaci\u00f3n para poder sumarlo.'; return; }
-  msg.textContent = 'Bienvenido a la comunidad. Le escribimos con los cupos de su ciudad.';
-});
-</script>
 </body>
 </html>
