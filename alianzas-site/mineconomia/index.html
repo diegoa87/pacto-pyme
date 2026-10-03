@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Continúa tu ruta digital | Pacto Pyme</title>
   <meta name="description" content="Registra tu pyme en Pacto Pyme y recibe oportunidades de formación, acompañamiento y beneficios para avanzar en su digitalización.">
-  <meta name="theme-color" content="#0F3D2E">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M15 53L50 20L85 53' fill='none' stroke='%230F3D2E' stroke-width='17' stroke-linecap='round'/%3E%3Cpath d='M29 86L50 67L71 86' fill='none' stroke='%234E6B79' stroke-width='15' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0033A0">
+  <link rel="icon" type="image/svg+xml" href="/assets/pactopyme-isotipo-live.svg">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Tu chequeo fue el diagnóstico. Ahora toca avanzar.">
   <meta property="og:description" content="Suma tu empresa a Pacto Pyme y continúa su ruta de digitalización.">
@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://alianzas.pactopyme.cl/mineconomia/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{--blue:#0f3d2e;--blue-dark:#0a2a20;--blue-soft:#e7efe9;--red:#ed5c3d;--red-dark:#c9472e;--ink:#1c1f24;--muted:#3f5a66;--paper:#fbfaf6;--soft:#f2efe7;--line:#e0ddd2;--ok:#136c3b;--display:'IBM Plex Sans',sans-serif;--body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',monospace;--max:1320px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.58 var(--body);-webkit-font-smoothing:antialiased}body.busy{cursor:wait}img{display:block;max-width:100%;height:auto}button,input,select,textarea{font:inherit}a{color:inherit}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--display);letter-spacing:-.025em;line-height:1.04;text-wrap:balance}.shell{width:min(var(--max),calc(100% - 48px));margin-inline:auto}.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--red);color:#fff;padding:11px 16px;font-weight:700}.skip:focus{top:12px}:focus-visible{outline:3px solid var(--red);outline-offset:3px}
@@ -29,11 +29,52 @@
     @media(max-width:900px){.hero-grid{grid-template-columns:1fr;padding-block:50px 64px;gap:42px}.form-card{max-width:680px;margin-inline:auto}.benefits-head,.clarity-in{grid-template-columns:1fr;gap:15px}.benefit-list{grid-template-columns:1fr}.hero::after{width:360px;height:360px}.brand .wm{font-size:19px}}
     @media(max-width:560px){.shell{width:calc(100% - 32px)}.top-in{min-height:64px;gap:12px}.brand{gap:8px}.brand svg{width:27px;height:27px}.brand .wm{font-size:18px}.back{font-size:.76rem;padding:8px 12px}.hero-grid{padding-block:38px 52px;gap:36px}.hero h1{font-size:clamp(2.15rem,10.8vw,3.15rem)}.hero::after{left:-170px}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-card{padding:24px 18px;border-radius:12px}.actions{align-items:stretch;flex-direction:column-reverse}.actions .btn{width:100%}.step-count{text-align:center}.benefits{padding:64px 0}.benefit{padding:24px}.footer-in{align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress span,.btn{transition:none}}
-  </style>
+
+/* Pacto Pyme · sistema de marca oficial */
+:root{
+  --blue:#0033A0;--blue-dark:#002478;--blue-soft:#EDF1FB;
+  --red:#DA291C;--red-dark:#B71F14;--ink:#101014;--muted:#565A6B;
+  --paper:#FFFFFF;--soft:#F4F5F9;--line:#E1E4EF;--ok:#136C3B;
+  --display:"Fraunces",Georgia,serif;--body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",monospace;
+}
+body{background:var(--paper)}
+.top{background:rgba(255,255,255,.96)}
+.brand .wm{font-family:var(--body);font-size:19px;line-height:.94;display:flex;flex-direction:column;gap:1px;text-transform:uppercase;color:var(--blue)}
+.brand .wm span{font-weight:400;font-size:10.5px;letter-spacing:.2em;color:var(--red);margin:0}
+.brand svg rect:nth-child(odd){fill:var(--blue)}
+.brand svg rect:nth-child(even){fill:var(--red)}
+.back,.btn.primary{background:var(--red);color:#fff}
+.back:hover,.btn.primary:hover{background:var(--red-dark)}
+.hero{background:var(--blue);color:#fff}
+.hero::after{filter:brightness(0) invert(1);opacity:.07}
+.hero .eyebrow{font-family:var(--mono);font-weight:500;color:#B9C9EC;letter-spacing:.16em}
+.hero .eyebrow::after{background:linear-gradient(to right,var(--red) 0,var(--red) 34px,rgba(255,255,255,.24) 34px)}
+.hero h1,.hero h1 em{color:#fff}
+.hero h1 em{text-decoration-color:var(--red)}
+.hero-lede{color:rgba(255,255,255,.84)}
+.origin-note{border-color:rgba(255,255,255,.22);border-left-color:var(--red);background:#fff}
+.steps{border-top-color:rgba(255,255,255,.24)}
+.steps li{border-bottom-color:rgba(255,255,255,.24)}
+.step-n{color:#B9C9EC}
+.steps b{color:#fff}
+.steps span:last-child{color:rgba(255,255,255,.76)}
+.form-card{border-radius:2px;box-shadow:0 20px 54px rgba(0,24,76,.22)}
+.form-card h2,.form-step h3{color:var(--blue)}
+.control:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,51,160,.14)}
+.btn{border-radius:2px}
+.benefit{border-radius:2px}
+.eyebrow{font-family:var(--mono);font-weight:500;letter-spacing:.16em}
+footer{background:var(--blue);color:rgba(255,255,255,.78);border-top:0}
+footer .brand .wm,footer .brand .wm span,footer .footer-links a{color:#fff}
+footer .brand svg rect{fill:#fff}
+@media(max-width:560px){.form-card{border-radius:2px}.brand .wm{font-size:17px}.back{font-size:.75rem;padding-inline:10px}}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#registro">Saltar al formulario</a>
-<header class="top"><div class="shell top-in"><a class="brand" href="https://pactopyme.cl/" aria-label="Pacto Pyme, inicio"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 53 L50 20 L85 53" fill="none" stroke="#0F3D2E" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 86 L50 67 L71 86" fill="none" stroke="#4E6B79" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wm">Pacto<span>Pyme</span></span></a><a class="back" href="https://pactopyme.cl/">Conocer Pacto Pyme</a></div></header>
+<header class="top"><div class="shell top-in"><a class="brand" href="https://pactopyme.cl/" aria-label="Pacto Pyme, inicio"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg><span class="wm">Pacto<span>Pyme</span></span></a><a class="back" href="https://pactopyme.cl/">Conocer Pacto Pyme</a></div></header>
 <main>
   <section class="hero">
     <div class="shell hero-grid">
@@ -103,7 +144,7 @@
   <section class="benefits"><div class="shell"><div class="benefits-head"><h2>Una comunidad para pasar del diagnóstico a la acción.</h2><p>Pacto Pyme articula empresas, gremios y organizaciones para acercar formación y apoyo práctico a las pymes. Tu registro nos permite identificar oportunidades que tengan sentido para tu realidad.</p></div><div class="benefit-list"><article class="benefit"><span class="n">01</span><h3>Formación aplicada</h3><p>Convocatorias orientadas a resolver necesidades concretas del negocio, con herramientas que puedas usar en la operación.</p></article><article class="benefit"><span class="n">02</span><h3>Acompañamiento</h3><p>Información y orientación para que puedas avanzar según el nivel de madurez digital de tu empresa.</p></article><article class="benefit"><span class="n">03</span><h3>Red de oportunidades</h3><p>Acceso a iniciativas y beneficios aportados por las organizaciones que participan en Pacto Pyme.</p></article></div></div></section>
   <section class="clarity"><div class="shell clarity-in"><h2>Información clara sobre este registro.</h2><div><p><strong>Chequeo Digital</strong> es una herramienta del programa Digitaliza tu Mipyme. Esta página pertenece a <strong>Pacto Pyme</strong> y recibe a empresas interesadas en continuar su ruta de digitalización.</p><p>Completar este formulario no garantiza un cupo ni constituye una postulación a un beneficio estatal. Te contactaremos cuando exista una convocatoria pertinente.</p></div></div></section>
 </main>
-<footer><div class="shell footer-in"><a class="brand" href="https://pactopyme.cl/" aria-label="Pacto Pyme, inicio"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 53 L50 20 L85 53" fill="none" stroke="#0F3D2E" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 86 L50 67 L71 86" fill="none" stroke="#4E6B79" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wm">Pacto<span>Pyme</span></span></a><nav class="footer-links" aria-label="Enlaces legales"><a href="https://pactopyme.cl/">Sitio principal</a><a href="https://pactopyme.cl/politica-de-privacidad.html">Privacidad</a><a href="mailto:contacto@pactopyme.cl">Contacto</a></nav></div></footer>
+<footer><div class="shell footer-in"><a class="brand" href="https://pactopyme.cl/" aria-label="Pacto Pyme, inicio"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg><span class="wm">Pacto<span>Pyme</span></span></a><nav class="footer-links" aria-label="Enlaces legales"><a href="https://pactopyme.cl/">Sitio principal</a><a href="https://pactopyme.cl/politica-de-privacidad.html">Privacidad</a><a href="mailto:contacto@pactopyme.cl">Contacto</a></nav></div></footer>
 <script>
 (()=>{
   const form=document.querySelector('#signup'),steps=[...document.querySelectorAll('.form-step')],progress=document.querySelector('#progress');let current=0;
