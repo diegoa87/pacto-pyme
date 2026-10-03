@@ -7,7 +7,7 @@
 <meta name="description" content="Pacto Pyme re&uacute;ne a empresas, gremios e instituciones para que las pymes de Chile vendan m&aacute;s, gasten menos y operen mejor. Formaci&oacute;n gratuita, empezando por el sector HORECA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Marca provisoria · propuesta 01 "Cúspide" */
@@ -328,24 +328,24 @@ footer{background:var(--paper);color:var(--tinta);padding:38px 0 56px;font-size:
 
 /* Pacto Pyme · sistema de marca oficial */
 :root{
-  --verde:#0033A0;--verde-hover:#002478;--verde-tint:#EDF1FB;
-  --coral:#DA291C;--coral-hover:#B71F14;--negro:#101014;
-  --salvia:#9FB6E8;--alerta:#B3261E;--tinta:#101014;
-  --paper:#FFFFFF;--gris:#F4F5F9;--rule:#E1E4EF;--gris-txt:#565A6B;
-  --display:"Fraunces",Georgia,serif;--body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --verde:#0F3D2E;--verde-hover:#0A2A20;--verde-tint:#E7EFE9;
+  --coral:#ED5C3D;--coral-hover:#CC4F34;--negro:#1A1A1A;
+  --salvia:#93B7A4;--alerta:#B3261E;--tinta:#1C1F24;
+  --paper:#FBFAF6;--gris:#F2EFE7;--rule:#E0DDD2;--gris-txt:#3F5A66;
+  --display:"IBM Plex Sans",sans-serif;--body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 body{background:var(--paper)}
 .nav{background:rgba(255,255,255,.96)}
-.mark .wm{font-family:var(--body);font-size:19px;line-height:.94;display:flex;flex-direction:column;gap:1px;text-transform:uppercase;color:var(--verde)}
-.mark .wm span{font-weight:400;font-size:10.5px;letter-spacing:.2em;color:var(--coral);margin:0}
+.mark .wm{font-family:var(--body);font-size:21px;line-height:1;display:flex;flex-direction:row;gap:.26em;text-transform:none;color:var(--verde)}
+.mark .wm span{font-weight:500;font-size:inherit;letter-spacing:-.03em;color:#4E6B79;margin:0}
 .mark{min-height:44px}
 .eyebrow{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--coral)}
 .eyebrow::after{background:linear-gradient(to right,var(--coral) 0,var(--coral) 34px,var(--rule) 34px)}
 .btn{background:var(--coral);border-radius:2px}
 .btn:hover{background:var(--coral-hover)}
 .hero{background:var(--verde);color:#fff}
-.hero .eyebrow{color:#B9C9EC}
+.hero .eyebrow{color:#C9DBD1}
 .hero .eyebrow::after{background:linear-gradient(to right,var(--coral) 0,var(--coral) 34px,rgba(255,255,255,.24) 34px)}
 .hero h1,.hero h1 em{color:#fff}
 .hero h1 em{text-decoration-color:var(--coral)}
@@ -353,13 +353,13 @@ body{background:var(--paper)}
 .hero-lede strong{color:#fff}
 .hero .btn--ghost{color:#fff;border-color:rgba(255,255,255,.8)}
 .hero .btn--ghost:hover{background:#fff;color:var(--verde)}
-.hero-art rect{fill:#fff}
+.hero-art path{stroke:#fff}
 .hero-photo{border-left:1px solid rgba(255,255,255,.18)}
 .hero-dots button{position:relative;width:44px;height:44px;background:transparent}
 .hero-dots button::after{content:"";position:absolute;left:8px;top:19px;width:28px;height:5px;border-radius:3px;background:rgba(255,255,255,.5)}
 .hero-dots button:hover::after{background:rgba(255,255,255,.8)}
 .hero-dots button.is-on::after{background:var(--coral)}
-@media(min-width:960px){.hero-photo::after{background:linear-gradient(to right,var(--verde) 0%,var(--verde) 4%,rgba(0,51,160,.72) 22%,rgba(0,51,160,.3) 40%,rgba(0,51,160,0) 62%)}}
+@media(min-width:960px){.hero-photo::after{background:linear-gradient(to right,var(--verde) 0%,var(--verde) 4%,rgba(15,61,46,.72) 22%,rgba(15,61,46,.3) 40%,rgba(15,61,46,0) 62%)}}
 .h-sec,.fund-txt h2,.cita,.firma .rubrica,.paso h3,.lista .t,.cap .n,.ruta h3{color:var(--verde)}
 .fund-seal,.beca-foto{border-radius:2px}
 .cap--live{background:var(--coral)}
@@ -368,7 +368,7 @@ footer{background:var(--verde);color:#fff;border-top:0}
 footer .f-links a{color:rgba(255,255,255,.84);border-bottom-color:rgba(255,255,255,.28)}
 footer .f-links a:hover{color:#fff;border-bottom-color:#fff}
 footer .f-links a{min-height:44px;display:inline-flex;align-items:center}
-footer svg rect{fill:#fff}
+footer svg path{stroke:#fff}
 @media(max-width:959px){.hero-photo{border-left:0;border-top:1px solid rgba(255,255,255,.18)}}
 
 </style>
@@ -380,7 +380,7 @@ footer svg rect{fill:#fff}
 
 <nav class="nav">
   <div class="nav-in">
-    <a class="mark" href="#top"><svg class="" viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg><span class="wm">Pacto<span>Pyme</span></span></a>
+    <a class="mark" href="#top"><svg class="" viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 53 L50 20 L85 53" fill="none" stroke="#0F3D2E" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 86 L50 67 L71 86" fill="none" stroke="#4E6B79" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wm">Pacto<span>Pyme</span></span></a>
     <span class="nav-tag">Si las pymes crecen, Chile crece</span>
     <a class="btn" href="/horeca">Ver la beca</a>
   </div>
@@ -389,7 +389,7 @@ footer svg rect{fill:#fff}
 <main id="top">
 
 <section class="hero">
-  <svg class="hero-art" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg>
+  <svg class="hero-art" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 53 L50 20 L85 53" fill="none" stroke="#0F3D2E" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 86 L50 67 L71 86" fill="none" stroke="#4E6B79" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg>
 
   <div class="wrap">
     <div class="hero-copy">
@@ -533,7 +533,7 @@ footer svg rect{fill:#fff}
 
 <footer>
   <div class="wrap f-in">
-    <span class="mono"><svg class="" viewBox="0 0 100 100" width="26" height="26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="25" y="17" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="68" y="25" width="15" height="46" rx="7.5" fill="#DA291C"/><rect x="29" y="68" width="46" height="15" rx="7.5" fill="#0033A0"/><rect x="17" y="29" width="15" height="46" rx="7.5" fill="#DA291C"/></svg> Pacto Pyme &middot; Si las pymes crecen, Chile crece</span>
+    <span class="mono"><svg class="" viewBox="0 0 100 100" width="26" height="26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 53 L50 20 L85 53" fill="none" stroke="#0F3D2E" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 86 L50 67 L71 86" fill="none" stroke="#4E6B79" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg> Pacto Pyme &middot; Si las pymes crecen, Chile crece</span>
     <nav class="f-links">
       <a href="/semanadelapyme">Semana de la Pyme</a>
       <a href="/politica-de-privacidad.html">Pol&iacute;tica de privacidad</a>
