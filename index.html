@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pacto Pyme &mdash; Si las pymes crecen, Chile crece</title>
 <meta name="description" content="Pacto Pyme re&uacute;ne a empresas, gremios e instituciones para que las pymes de Chile vendan m&aacute;s, gasten menos y operen mejor. Formaci&oacute;n gratuita, empezando por el sector HORECA.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
      tablero. Reemplaza al lima de Cuspide como color de accion en todo el
      sitio. Ojo: blanco sobre coral da 3,39 y no pasa AA para texto chico;
      si alguna vez lo piden accesible, el mismo tono al 80% (#BE4A31) da 4,98. */
-  --coral:#ED5C3D; --negro:#1A1A1A; --coral-hover:#CC4F34;
+  --coral:#ED5C3D; --coral-action:#BE4A31; --negro:#1A1A1A; --coral-hover:#A63E2A;
   --salvia:#93B7A4; --alerta:#B3261E;
   --tinta:#1C1F24; --paper:#FBFAF6; --gris:#F2EFE7; --rule:#E0DDD2; --gris-txt:#3F5A66;
   --display:"IBM Plex Sans",sans-serif;
@@ -41,7 +42,7 @@ section{padding:clamp(58px,8vw,110px) 0}
 .nota{font-family:var(--mono);font-size:11.5px;color:#55707B;margin-top:24px;line-height:1.8;max-width:72ch}
 :focus-visible{outline:3px solid var(--verde);outline-offset:3px}
 
-.btn{font-family:var(--body);font-weight:600;font-size:14.5px;background:var(--coral);color:#fff;border:0;border-radius:2px;padding:12px 22px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .18s ease,transform .18s ease}
+.btn{font-family:var(--body);font-weight:600;font-size:14.5px;background:var(--coral-action);color:#fff;border:0;border-radius:2px;padding:12px 22px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .18s ease,transform .18s ease}
 .btn:hover{background:var(--coral-hover);transform:translateY(-1px)}
 .btn--ghost{background:transparent;color:var(--verde);border:1.5px solid var(--verde)}
 .btn--ghost:hover{background:var(--verde);color:#fff}
@@ -186,11 +187,23 @@ a.cap--live:hover{background:var(--coral-hover)}
 /* Esta tarjeta va en coral y no en negro: es la unica activa de las tres y
    el color la separa de las que dicen "proximamente". Su flecha pasa a
    blanco, porque en coral se fundia con el fondo y desaparecia. */
-.cap--live{background:var(--coral)}
+.cap--live{background:var(--coral-action)}
+.cap--live{color:#fff}
 .cap--live .flecha{color:#fff}
-.cap--live .k{color:rgba(255,255,255,.8)}
+.cap--live .k{color:#fff}
 .cap--live .k:first-child{color:#fff}
 .cap--live .n{color:#fff}
+
+.recursos-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:38px}
+@media(min-width:820px){.recursos-grid{grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr)}}
+.recurso-principal{background:#fff;padding:clamp(26px,4vw,48px);text-decoration:none;display:block;border-top:5px solid var(--coral);transition:background .18s ease}
+.recurso-principal:hover{background:var(--verde-tint)}
+.recurso-principal .k,.recursos-nota .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--verde);font-weight:600}
+.recurso-principal h3{font-size:clamp(26px,3.3vw,40px);color:var(--verde);margin-top:14px;max-width:18ch}
+.recurso-principal p{color:var(--gris-txt);margin-top:16px;max-width:58ch}
+.recurso-principal .flecha{display:block;color:var(--coral-action);font-weight:700;font-size:13px;margin-top:24px}
+.recursos-nota{background:var(--verde);color:#fff;padding:clamp(26px,4vw,42px);display:flex;flex-direction:column;justify-content:space-between;gap:34px}
+.recursos-nota .k{color:#C9DBD1}.recursos-nota p{font-size:clamp(19px,2.2vw,25px);line-height:1.25;font-weight:600}.recursos-nota a{color:#fff;font-size:13px;font-weight:700;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
 
 .rutas{display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,40px);margin-top:42px}
 @media(min-width:900px){.rutas{grid-template-columns:repeat(2,1fr);gap:clamp(30px,3.4vw,54px)}}
@@ -323,13 +336,13 @@ footer{background:var(--paper);color:var(--tinta);padding:38px 0 56px;font-size:
 .franja-sem .d{display:block;font-size:14.5px;color:rgba(255,255,255,.76);margin-top:7px;max-width:52ch}
 /* Sobre la franja coral el boton va BLANCO: en coral se funde con el fondo y
    desaparece. El texto usa un coral mas oscuro para pasar contraste. */
-.franja-sem .btn{background:var(--coral);color:#fff;flex:0 0 auto}
+.franja-sem .btn{background:var(--coral-action);color:#fff;flex:0 0 auto}
 .franja-sem .btn:hover{background:var(--coral-hover)}
 
 /* Pacto Pyme · sistema de marca oficial */
 :root{
   --verde:#0F3D2E;--verde-hover:#0A2A20;--verde-tint:#E7EFE9;
-  --coral:#ED5C3D;--coral-hover:#CC4F34;--negro:#1A1A1A;
+  --coral:#ED5C3D;--coral-action:#BE4A31;--coral-hover:#A63E2A;--negro:#1A1A1A;
   --salvia:#93B7A4;--alerta:#B3261E;--tinta:#1C1F24;
   --paper:#FBFAF6;--gris:#F2EFE7;--rule:#E0DDD2;--gris-txt:#3F5A66;
   --display:"IBM Plex Sans",sans-serif;--body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
@@ -340,10 +353,11 @@ body{background:var(--paper)}
 .mark .wm{font-family:var(--body);font-size:21px;line-height:1;display:flex;flex-direction:row;gap:.26em;text-transform:none;color:var(--verde)}
 .mark .wm span{font-weight:500;font-size:inherit;letter-spacing:-.03em;color:#4E6B79;margin:0}
 .mark{min-height:44px}
-.eyebrow{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--coral)}
+.eyebrow{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--coral-hover)}
 .eyebrow::after{background:linear-gradient(to right,var(--coral) 0,var(--coral) 34px,var(--rule) 34px)}
-.btn{background:var(--coral);border-radius:2px}
+.btn{background:var(--coral-action);border-radius:2px}
 .btn:hover{background:var(--coral-hover)}
+.btn--ghost{background:transparent}
 .hero{background:var(--verde);color:#fff}
 .hero .eyebrow{color:#C9DBD1}
 .hero .eyebrow::after{background:linear-gradient(to right,var(--coral) 0,var(--coral) 34px,rgba(255,255,255,.24) 34px)}
@@ -361,8 +375,9 @@ body{background:var(--paper)}
 .hero-dots button.is-on::after{background:var(--coral)}
 @media(min-width:960px){.hero-photo::after{background:linear-gradient(to right,var(--verde) 0%,var(--verde) 4%,rgba(15,61,46,.72) 22%,rgba(15,61,46,.3) 40%,rgba(15,61,46,0) 62%)}}
 .h-sec,.fund-txt h2,.cita,.firma .rubrica,.paso h3,.lista .t,.cap .n,.ruta h3{color:var(--verde)}
+.cap--live .n{color:#fff}
 .fund-seal,.beca-foto{border-radius:2px}
-.cap--live{background:var(--coral)}
+.cap--live{background:var(--coral-action)}
 .ruta,.fund-seal{box-shadow:none}
 footer{background:var(--verde);color:#fff;border-top:0}
 footer .f-links a{color:rgba(255,255,255,.84);border-bottom-color:rgba(255,255,255,.28)}
@@ -424,7 +439,7 @@ footer svg path{stroke:#fff}
 
 <section class="franja-sem">
   <div class="wrap franja-in">
-    <img src="/assets/semana-de-la-pyme.svg" alt="Semana de la Pyme">
+    <img src="/assets/semana-de-la-pyme.svg" width="1708" height="703" alt="Semana de la Pyme">
     <div class="txt">
       <span class="k">13, 14 y 15 de octubre &middot; inscripciones abiertas</span>
       <span class="t">Tres actividades gratuitas en la Semana de la Pyme</span>
@@ -464,18 +479,39 @@ footer svg path{stroke:#fff}
   </div>
 </section>
 
+<section id="recursos" style="background:var(--gris)">
+  <div class="wrap">
+    <p class="eyebrow">Recursos gratuitos</p>
+    <h2 class="h-sec">Herramientas para tomar mejores decisiones.</h2>
+    <p class="sec-lede">Recursos breves y aplicados para entender qu&eacute; puede resolver la inteligencia artificial en una pyme y por d&oacute;nde comenzar.</p>
+    <div class="recursos-grid">
+      <a class="recurso-principal" href="/recursos/agentes-ia-para-pymes/">
+        <span class="k">Diagn&oacute;stico interactivo &middot; 4 preguntas</span>
+        <h3>&iquest;Qu&eacute; agente de IA necesita tu pyme?</h3>
+        <p>Recibe una orientaci&oacute;n inicial, las tareas que podr&iacute;a apoyar y un primer paso concreto para probarlo.</p>
+        <span class="flecha">Hacer el diagn&oacute;stico &rarr;</span>
+      </a>
+      <aside class="recursos-nota">
+        <span class="k">Biblioteca en crecimiento</span>
+        <p>Iremos sumando nuevas gu&iacute;as y herramientas pr&aacute;cticas para pymes.</p>
+        <a href="/recursos/">Ver todos los recursos</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <section id="apoyo" style="background:var(--gris)">
   <div class="wrap apoyo-in">
     <div class="apoyo-set">
       <span class="k">Empresa impulsora</span>
       <div class="apoyo-logos">
-        <img class="l-abastible" src="/assets/abastible-logo.png" alt="Abastible" loading="lazy">
+        <img class="l-abastible" src="/assets/abastible-logo.png" width="1280" height="294" alt="Abastible" loading="lazy">
       </div>
     </div>
     <div class="apoyo-set">
       <span class="k">Apoyan</span>
       <div class="apoyo-logos">
-        <img class="l-acti" src="/assets/acti-logo.svg" alt="ACTI" loading="lazy">
+        <img class="l-acti" src="/assets/acti-logo.svg" width="420" height="99" alt="ACTI" loading="lazy">
         <img class="l-mineco" src="/assets/ministerio-economia-logo.png" width="360" height="327"
              alt="Ministerio de Econom&iacute;a, Fomento y Turismo &middot; Gobierno de Chile" loading="lazy">
       </div>
@@ -483,7 +519,7 @@ footer svg path{stroke:#fff}
     <div class="apoyo-set">
       <span class="k">Organiza y ejecuta</span>
       <div class="apoyo-logos">
-        <img class="l-dl" src="/assets/desafio-latam-logo.png" alt="Desaf&iacute;o Latam" loading="lazy">
+        <img class="l-dl" src="/assets/desafio-latam-logo.png" width="345" height="142" alt="Desaf&iacute;o Latam" loading="lazy">
       </div>
     </div>
   </div>
@@ -535,6 +571,7 @@ footer svg path{stroke:#fff}
   <div class="wrap f-in">
     <span class="mono"><svg class="" viewBox="0 0 100 100" width="26" height="26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 53 L50 20 L85 53" fill="none" stroke="#0F3D2E" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 86 L50 67 L71 86" fill="none" stroke="#4E6B79" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg> Pacto Pyme &middot; Si las pymes crecen, Chile crece</span>
     <nav class="f-links">
+      <a href="/recursos/">Recursos gratuitos</a>
       <a href="/semanadelapyme">Semana de la Pyme</a>
       <a href="/politica-de-privacidad.html">Pol&iacute;tica de privacidad</a>
     </nav>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Qué agente de IA necesita tu pyme? | Pacto Pyme</title>
+  <meta name="description" content="Responde cuatro preguntas y descubre qué tipo de agente de inteligencia artificial podría ayudar a tu pyme a vender más u operar mejor.">
+  <meta name="theme-color" content="#0F3D2E">
+  <link rel="canonical" href="https://pactopyme.cl/recursos/agentes-ia-para-pymes/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#0F3D2E;--green-dark:#0A2A20;--green-tint:#E7EFE9;--coral:#ED5C3D;--coral-dark:#BE4A31;--paper:#FBFAF6;--soft:#F2EFE7;--ink:#1C1F24;--muted:#3F5A66;--rule:#D7D4C9;--white:#fff;--max:1180px;--sans:"IBM Plex Sans",Arial,sans-serif;--mono:"IBM Plex Mono",monospace}
+    *{box-sizing:border-box}
+    [hidden]{display:none!important}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+    button,input{font:inherit}
+    button,a{touch-action:manipulation}
+    :focus-visible{outline:3px solid var(--coral-dark);outline-offset:3px}
+    .skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--green);color:#fff;padding:10px 14px}.skip:focus{top:12px}
+    .shell{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    header{border-bottom:1px solid var(--rule);background:rgba(251,250,246,.96);position:sticky;top:0;z-index:20;backdrop-filter:blur(10px)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.mark{display:flex;align-items:center;gap:11px;min-height:44px;text-decoration:none}.mark .wm{font-weight:700;font-size:21px;letter-spacing:-.03em;line-height:1;display:flex;gap:.26em;color:var(--green)}.mark .wm span{font-weight:500;color:#4E6B79}.back{font-size:.88rem;font-weight:600;color:var(--green);text-underline-offset:4px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+    .intro{position:relative;padding:clamp(58px,8vw,104px) 0 42px;background:var(--green);color:#fff}.intro::after{content:"";position:absolute;inset:0 0 0 68%;background:var(--green-dark)}.intro-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(230px,.55fr);gap:7vw;align-items:end}.eyebrow{margin:0;font:600 .72rem/1.4 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#F4B5A7}.intro h1{font-size:clamp(2.8rem,6vw,5.8rem);line-height:.94;letter-spacing:-.045em;margin:18px 0 24px;max-width:900px;text-wrap:balance}.intro-lede{font-size:clamp(1.05rem,1.65vw,1.25rem);color:#E2EBE6;max-width:760px;margin:0}.intro-note{border-top:1px solid rgba(255,255,255,.3);padding-top:22px;color:#D8E2DD;font-size:.92rem}.intro-note strong{display:block;font-size:1.15rem;color:#fff;margin-bottom:7px}
+    main{padding-bottom:90px}.tool-wrap{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);gap:28px;align-items:start;margin-top:44px}.tool{background:#fff;border:1px solid var(--rule);box-shadow:0 18px 50px rgba(15,61,46,.08)}.tool-head{padding:24px clamp(22px,4vw,44px);border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:18px}.progress-text{font:600 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--green);white-space:nowrap}.progress{height:7px;background:var(--soft);flex:1;overflow:hidden}.progress span{display:block;height:100%;width:25%;background:var(--coral);transition:width .22s ease}.diagnostic{padding:clamp(28px,5vw,58px)}fieldset{border:0;padding:0;margin:0}legend{display:block;width:100%;font-size:clamp(1.65rem,3vw,2.6rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:var(--green);margin-bottom:12px}.question-help{color:var(--muted);margin:0 0 28px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.option{position:relative}.option input{appearance:none;position:absolute;inset:0;width:100%;height:100%;margin:0;z-index:1;cursor:pointer;background:transparent;border:0}.option label{min-height:72px;border:1px solid var(--rule);padding:16px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;font-weight:600;background:var(--paper);transition:border .16s ease,background .16s ease,transform .16s ease}.option label::before{content:"";width:18px;height:18px;border:2px solid #8DA296;border-radius:50%;flex:0 0 auto}.option label:hover{border-color:var(--green);transform:translateY(-1px)}.option input:checked+label{border-color:var(--green);background:var(--green-tint);box-shadow:inset 4px 0 var(--coral)}.option input:checked+label::before{border:5px solid var(--green);background:#fff}.option input:focus-visible{outline:3px solid var(--coral-dark);outline-offset:3px}.actions{display:flex;justify-content:space-between;gap:14px;margin-top:34px}.button{border:0;min-height:48px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;background:var(--coral-dark);color:#fff;transition:transform .16s ease,background .16s ease}.button:hover{background:#A63E2A;transform:translateY(-1px)}.button.secondary{background:transparent;color:var(--green);border:1px solid var(--green)}.button[disabled]{opacity:.45;cursor:not-allowed;transform:none}.step[hidden]{display:none}.error{color:#8D2218;font-weight:600;margin:18px 0 0}.side{background:var(--soft);border-top:5px solid var(--green);padding:28px}.side h2{color:var(--green);font-size:1.25rem;margin:0 0 18px}.side ol{padding-left:20px;margin:0}.side li+li{margin-top:11px}.privacy{border-top:1px solid var(--rule);padding-top:20px;margin:24px 0 0;color:var(--muted);font-size:.86rem}.privacy strong{color:var(--green)}
+    .result{padding:clamp(28px,5vw,58px)}.result[hidden]{display:none}.result-tag{display:inline-block;font:600 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--green);background:var(--green-tint);padding:7px 9px}.result h2{font-size:clamp(2rem,4.5vw,4.3rem);line-height:.98;letter-spacing:-.04em;color:var(--green);margin:20px 0}.result-summary{font-size:1.12rem;color:var(--muted);max-width:680px}.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}.result-card{border:1px solid var(--rule);padding:22px;background:var(--paper)}.result-card h3{font-size:1rem;color:var(--green);margin:0 0 12px}.result-card ul{padding-left:19px;margin:0}.result-card p{margin:0}.route{background:var(--green);color:#fff;padding:24px;margin-top:16px}.route span{font:600 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#F4B5A7}.route strong{display:block;font-size:1.45rem;margin-top:6px}.result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.result-actions .button.secondary{background:#fff}.disclaimer{font-size:.82rem;color:var(--muted);margin:24px 0 0;max-width:760px}
+    footer{border-top:1px solid var(--rule);padding:26px 0;color:var(--muted);font-size:.82rem}.footer-in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer-in a{color:var(--green);display:inline-flex;align-items:center;min-height:44px}
+    @media(max-width:820px){.intro::after{display:none}.intro-grid,.tool-wrap{grid-template-columns:1fr}.intro-note{max-width:460px}.result-grid{grid-template-columns:1fr}}
+    @media(max-width:560px){.shell{width:calc(100% - 28px)}.nav{min-height:64px}.mark .wm{font-size:18px}.mark svg{width:27px;height:27px}.back{font-size:0}.back::after{content:"Volver";font-size:.85rem}.intro{padding:48px 0 34px}.intro h1{font-size:clamp(2.55rem,13vw,3.7rem)}.tool-wrap{margin-top:24px}.tool-head{padding:18px}.diagnostic,.result{padding:26px 18px}.options{grid-template-columns:1fr}.option label{min-height:62px}.actions,.result-actions{display:grid;grid-template-columns:1fr}.button{width:100%}.side{padding:22px}.footer-in{display:block}.footer-in a{display:inline-block;margin-top:10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress span,.option label,.button{transition:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#diagnostico">Saltar al diagnóstico</a>
+  <header>
+    <div class="nav shell">
+      <a class="mark" href="/" aria-label="Pacto Pyme, inicio"><svg viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 53 L50 20 L85 53" fill="none" stroke="#0F3D2E" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><path d="M29 86 L50 67 L71 86" fill="none" stroke="#4E6B79" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wm">Pacto<span>Pyme</span></span></a>
+      <a class="back" href="/recursos/">Volver a recursos</a>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="shell intro-grid">
+      <div>
+        <p class="eyebrow">Herramienta gratuita</p>
+        <h1>¿Qué agente de IA necesita tu pyme?</h1>
+        <p class="intro-lede">Responde cuatro preguntas y recibe una orientación práctica para comenzar a automatizar una tarea de tu negocio.</p>
+      </div>
+      <div class="intro-note"><strong>Sin registro</strong>No pedimos nombre, correo, RUT ni información confidencial para mostrar el resultado.</div>
+    </div>
+  </section>
+
+  <main id="diagnostico" class="shell">
+    <div class="tool-wrap">
+      <section class="tool" aria-labelledby="tool-title">
+        <div class="tool-head">
+          <span class="progress-text" id="progress-text">Pregunta 1 de 4</span>
+          <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+        </div>
+
+        <form class="diagnostic" id="diagnostic-form" novalidate>
+          <h2 id="tool-title" style="position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden">Diagnóstico de agente de IA</h2>
+          <fieldset class="step" data-step="0">
+            <legend>¿Qué tipo de negocio tienes?</legend>
+            <p class="question-help">Esto permite adaptar los ejemplos y el primer paso.</p>
+            <div class="options">
+              <div class="option"><input id="business-restaurante" type="radio" name="business" value="restaurante"><label for="business-restaurante">Restaurante o bar</label></div>
+              <div class="option"><input id="business-cafeteria" type="radio" name="business" value="cafeteria"><label for="business-cafeteria">Cafetería o amasandería</label></div>
+              <div class="option"><input id="business-hotel" type="radio" name="business" value="hotel"><label for="business-hotel">Hotel o alojamiento</label></div>
+              <div class="option"><input id="business-catering" type="radio" name="business" value="catering"><label for="business-catering">Catering o casino</label></div>
+              <div class="option"><input id="business-otro" type="radio" name="business" value="otro"><label for="business-otro">Otro tipo de pyme</label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="1" hidden>
+            <legend>¿Qué necesitas mejorar primero?</legend>
+            <p class="question-help">Elige el problema que hoy tiene mayor impacto.</p>
+            <div class="options">
+              <div class="option"><input id="priority-clientes" type="radio" name="priority" value="clientes"><label for="priority-clientes">Conseguir y seguir clientes</label></div>
+              <div class="option"><input id="priority-atencion" type="radio" name="priority" value="atencion"><label for="priority-atencion">Responder consultas y reservas</label></div>
+              <div class="option"><input id="priority-contenido" type="radio" name="priority" value="contenido"><label for="priority-contenido">Crear promociones y contenido</label></div>
+              <div class="option"><input id="priority-inventario" type="radio" name="priority" value="inventario"><label for="priority-inventario">Controlar inventario y mermas</label></div>
+              <div class="option"><input id="priority-operacion" type="radio" name="priority" value="operacion"><label for="priority-operacion">Ordenar pedidos y operación</label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="2" hidden>
+            <legend>¿Por dónde llegan más solicitudes?</legend>
+            <p class="question-help">Piensa en consultas, reservas, pedidos o cotizaciones.</p>
+            <div class="options">
+              <div class="option"><input id="channel-whatsapp" type="radio" name="channel" value="whatsapp"><label for="channel-whatsapp">WhatsApp</label></div>
+              <div class="option"><input id="channel-instagram" type="radio" name="channel" value="instagram"><label for="channel-instagram">Instagram o redes sociales</label></div>
+              <div class="option"><input id="channel-telefono" type="radio" name="channel" value="telefono"><label for="channel-telefono">Teléfono</label></div>
+              <div class="option"><input id="channel-email" type="radio" name="channel" value="email"><label for="channel-email">Correo electrónico</label></div>
+              <div class="option"><input id="channel-presencial" type="radio" name="channel" value="presencial"><label for="channel-presencial">Atención presencial</label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="3" hidden>
+            <legend>¿Qué tarea repetida consume más tiempo?</legend>
+            <p class="question-help">La automatización debe comenzar por una tarea concreta.</p>
+            <div class="options">
+              <div class="option"><input id="repetitive-consultas" type="radio" name="repetitive" value="consultas"><label for="repetitive-consultas">Responder las mismas consultas</label></div>
+              <div class="option"><input id="repetitive-reservas" type="radio" name="repetitive" value="reservas"><label for="repetitive-reservas">Coordinar reservas</label></div>
+              <div class="option"><input id="repetitive-publicaciones" type="radio" name="repetitive" value="publicaciones"><label for="repetitive-publicaciones">Preparar publicaciones</label></div>
+              <div class="option"><input id="repetitive-stock" type="radio" name="repetitive" value="stock"><label for="repetitive-stock">Revisar faltantes y stock</label></div>
+              <div class="option"><input id="repetitive-pedidos" type="radio" name="repetitive" value="pedidos"><label for="repetitive-pedidos">Ordenar pedidos</label></div>
+            </div>
+          </fieldset>
+
+          <p class="error" id="error" role="alert" hidden>Selecciona una opción para continuar.</p>
+          <div class="actions">
+            <button class="button secondary" id="back-button" type="button" hidden>Volver</button>
+            <button class="button" id="next-button" type="button">Continuar</button>
+            <button class="button" id="submit-button" type="submit" hidden>Ver recomendación</button>
+          </div>
+        </form>
+
+        <section class="result" id="result" aria-live="polite" hidden tabindex="-1">
+          <span class="result-tag">Orientación inicial</span>
+          <h2 id="result-title"></h2>
+          <p class="result-summary" id="result-summary"></p>
+          <div class="result-grid">
+            <article class="result-card"><h3>Podría ayudarte a</h3><ul id="result-tasks"></ul></article>
+            <article class="result-card"><h3>Primer paso recomendado</h3><p id="result-first-step"></p></article>
+          </div>
+          <div class="route"><span>Ruta relacionada de Pacto Pyme</span><strong id="result-route"></strong></div>
+          <div class="result-actions">
+            <a class="button" id="apply-link" href="/horeca#comunidad">Postular a la beca HORECA</a>
+            <button class="button secondary" id="download-button" type="button">Descargar resultado</button>
+            <button class="button secondary" id="restart-button" type="button">Volver a responder</button>
+          </div>
+          <p class="disclaimer">Esta orientación no es el Chequeo Digital del Gobierno ni garantiza resultados. Antes de automatizar, revisa la calidad de tus datos, define responsables y mantén supervisión humana.</p>
+        </section>
+      </section>
+
+      <aside class="side">
+        <h2>Qué recibirás</h2>
+        <ol><li>Un tipo de agente recomendado.</li><li>Las tareas que podría apoyar.</li><li>Un primer paso para probarlo.</li><li>Una ruta formativa relacionada.</li></ol>
+        <p class="privacy"><strong>Privacidad:</strong> el prototipo procesa las respuestas en tu navegador. No solicita datos personales ni envía el contenido del diagnóstico.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer><div class="shell footer-in"><span>Pacto Pyme · Herramienta de orientación</span><a href="/politica-de-privacidad.html">Política de privacidad</a></div></footer>
+
+  <script type="module">
+    import { buildTrackingEvent, recommendAgent, validateAnswers } from '/assets/agente-diagnostico.js';
+
+    const form=document.getElementById('diagnostic-form');
+    const steps=[...form.querySelectorAll('.step')];
+    const progressText=document.getElementById('progress-text');
+    const progressBar=document.getElementById('progress-bar');
+    const backButton=document.getElementById('back-button');
+    const nextButton=document.getElementById('next-button');
+    const submitButton=document.getElementById('submit-button');
+    const error=document.getElementById('error');
+    const result=document.getElementById('result');
+    let current=0;
+    let started=false;
+    let latestResult=null;
+
+    function track(name,context={}){
+      const detail=buildTrackingEvent(name,context);
+      window.dispatchEvent(new CustomEvent('pp:diagnostico-event',{detail}));
+      if(Array.isArray(window.dataLayer))window.dataLayer.push(detail);
+    }
+    function answers(){return Object.fromEntries(new FormData(form).entries())}
+    function showStep(index){
+      current=index;
+      steps.forEach((step,i)=>step.hidden=i!==index);
+      progressText.textContent=`Pregunta ${index+1} de ${steps.length}`;
+      progressBar.style.width=`${((index+1)/steps.length)*100}%`;
+      backButton.hidden=index===0;
+      nextButton.hidden=index===steps.length-1;
+      submitButton.hidden=index!==steps.length-1;
+      error.hidden=true;
+      const legend=steps[index].querySelector('legend');
+      legend.setAttribute('tabindex','-1');legend.focus();
+      track('step_view',{business:answers().business});
+    }
+    function hasCurrentAnswer(){return Boolean(steps[current].querySelector('input:checked'))}
+
+    form.addEventListener('change',()=>{
+      error.hidden=true;
+      if(!started){started=true;track('started',{business:answers().business})}
+    });
+    nextButton.addEventListener('click',()=>{
+      if(!hasCurrentAnswer()){error.hidden=false;return}
+      showStep(current+1);
+    });
+    backButton.addEventListener('click',()=>showStep(current-1));
+    form.addEventListener('submit',(event)=>{
+      event.preventDefault();
+      if(!hasCurrentAnswer()){error.hidden=false;return}
+      const data=answers();
+      if(validateAnswers(data).length){error.hidden=false;return}
+      latestResult=recommendAgent(data);
+      document.getElementById('result-title').textContent=latestResult.title;
+      document.getElementById('result-summary').textContent=latestResult.summary;
+      document.getElementById('result-tasks').replaceChildren(...latestResult.tasks.map(task=>{const li=document.createElement('li');li.textContent=task;return li}));
+      document.getElementById('result-first-step').textContent=latestResult.firstStep;
+      document.getElementById('result-route').textContent=latestResult.route;
+      form.hidden=true;result.hidden=false;
+      document.querySelector('.tool-head').hidden=true;
+      result.focus();
+      track('completed',{resultId:latestResult.id,business:data.business});
+    });
+    document.getElementById('restart-button').addEventListener('click',()=>{
+      form.reset();current=0;started=false;latestResult=null;
+      form.hidden=false;result.hidden=true;document.querySelector('.tool-head').hidden=false;showStep(0);
+    });
+    document.getElementById('download-button').addEventListener('click',()=>{
+      if(!latestResult)return;
+      const text=[latestResult.title,'',latestResult.summary,'','Puede ayudarte a:',...latestResult.tasks.map(x=>`- ${x}`),'',`Primer paso: ${latestResult.firstStep}`,`Ruta relacionada: ${latestResult.route}`].join('\n');
+      const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));
+      const link=document.createElement('a');link.href=url;link.download='orientacion-agente-ia-pacto-pyme.txt';link.click();URL.revokeObjectURL(url);
+      track('downloaded',{resultId:latestResult.id});
+    });
+    document.getElementById('apply-link').addEventListener('click',()=>track('cta_horeca',{resultId:latestResult?.id}));
+  </script>
+</body>
+</html>
