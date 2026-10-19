@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Registro completado | Pacto Pyme</title>
+  <meta name="description" content="Registra tu pyme en Pacto Pyme y recibe oportunidades de formación, acompañamiento y beneficios para avanzar en su digitalización.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#233435">
+  <link rel="icon" type="image/svg+xml" href="/assets/pactopyme-faio-isotipo-greda.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root{--pizarra:#233435;--botella:#385151;--loza:#CED9D9;--loza-60:#E2E8E8;--loza-40:#EBF0F0;--greda:#CC6C51;--greda-80:#D68974;--harina:#F1F1F1;--carbon:#181D1A;--alerta:#B3261E;--ok:#2E6B4F;--font:"Inter",Helvetica,Arial,sans-serif;--ancho:1240px;--pad:clamp(16px,4vw,48px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--harina);color:var(--carbon);font:400 16.5px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+body.busy{cursor:wait}img{display:block;max-width:100%;height:auto}button,input,select,textarea{font:inherit}a{color:inherit}
+h1,h2,h3,p{margin-top:0}h1,h2,h3{letter-spacing:-.025em;line-height:1.08;text-wrap:balance;color:var(--pizarra)}
+.wrap{max-width:var(--ancho);margin:0 auto;padding:0 var(--pad)}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--greda);color:var(--carbon);padding:11px 16px;font-weight:700;border-radius:999px}.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--greda);outline-offset:3px}
+.kick{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-weight:600;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--botella)}
+.kick::before{content:"";width:28px;height:2px;background:var(--greda);flex:0 0 auto}
+
+/* Nav: píldora flotante de pactopyme.cl */
+.nav{position:fixed;top:14px;left:0;right:0;z-index:50;padding:0 clamp(12px,2.5vw,32px)}
+.nav-in{display:flex;align-items:center;gap:32px;height:76px;max-width:var(--ancho);margin:0 auto;padding:0 12px 0 26px;background:rgba(241,241,241,.82);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid rgba(206,217,217,.9);border-radius:999px;box-shadow:0 10px 30px -12px rgba(35,52,53,.28)}
+.nav .logo{height:50px;width:auto}
+.nav-links{display:flex;gap:6px;margin-left:auto;font-size:14.5px;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--botella);padding:10px 16px;border-radius:999px;transition:background .18s,color .18s}.nav-links a:hover{background:var(--loza-60);color:var(--carbon)}
+.m-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-weight:600;font-size:15.5px;line-height:1;padding:15px 24px;border-radius:999px;background:var(--greda);color:var(--harina);text-decoration:none;border:1.5px solid var(--greda);transition:background .18s,border-color .18s;cursor:pointer}
+.m-btn:hover{background:#B85F47;border-color:#B85F47}.nav .m-btn{padding:14px 22px;font-size:15px}
+
+/* Hero claro con brillo de los degradés del manual */
+.hero{background:radial-gradient(60% 70% at 8% 0%,rgba(206,217,217,.95) 0%,rgba(206,217,217,0) 70%),radial-gradient(60% 70% at 58% 108%,rgba(204,108,81,.26) 0%,rgba(204,108,81,0) 70%),var(--harina);padding:140px 0 72px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(400px,.86fr);gap:clamp(36px,5vw,80px);align-items:start}
+.hero h1{font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1.03;letter-spacing:-.035em;margin:0 0 24px}
+.hero h1 em{font-style:normal;color:var(--greda)}
+.lede{font-size:clamp(16.5px,1.35vw,18.5px);color:var(--botella);max-width:52ch;margin:0}
+.origen{margin-top:30px;padding:18px 20px;background:rgba(241,241,241,.7);border:1px solid var(--loza);border-left:4px solid var(--greda);border-radius:12px;max-width:52ch}
+.origen strong{display:block;color:var(--pizarra);margin-bottom:4px}.origen span{color:var(--botella);font-size:.95rem}
+
+/* Tarjeta del formulario */
+.form-card{background:var(--harina);border:1px solid var(--loza);border-radius:20px;padding:clamp(24px,3vw,38px);box-shadow:0 24px 60px -24px rgba(35,52,53,.35)}
+.form-card h2{font-weight:600;font-size:clamp(1.7rem,2.4vw,2.1rem);margin-bottom:8px}
+.form-intro{color:var(--botella);font-size:.94rem;margin-bottom:22px}
+.progress{height:4px;background:var(--loza);border-radius:4px;margin-bottom:26px;overflow:hidden}.progress span{display:block;height:100%;width:33.333%;background:var(--greda);transition:width .2s}
+.form-step{display:none}.form-step.active{display:block}.form-step h3{font-weight:600;font-size:1.2rem;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}
+label,.label{font-weight:700;font-size:10.5px;letter-spacing:.074em;text-transform:uppercase;color:var(--botella)}
+.control{width:100%;min-height:48px;background:var(--harina);border:1px solid var(--loza);border-radius:10px;color:var(--carbon);font-size:16px;padding:11px 12px}
+select.control{appearance:none;-webkit-appearance:none;padding-right:34px;background:var(--harina) url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.4 6 6.4l5-5' fill='none' stroke='%23385151' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 12px center/12px 8px}
+.control::placeholder{color:#7A8C8C}
+.control:focus{outline:0;border-color:var(--pizarra);box-shadow:0 0 0 3px rgba(35,52,53,.14)}
+.control[aria-invalid=true]{border-color:var(--alerta);box-shadow:0 0 0 3px rgba(179,38,30,.12)}
+.hint{font-size:.78rem;color:var(--botella)}.error{font-size:.8rem;color:var(--alerta);min-height:1.2em}
+.radios{display:grid;gap:8px}
+.choice{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--loza);border-radius:10px;padding:12px 14px;cursor:pointer;text-transform:none;letter-spacing:0;font-weight:400;font-size:.93rem;color:var(--carbon);background:var(--harina)}
+.choice:has(input:checked){border-color:var(--pizarra);background:var(--loza-60)}.choice input{margin-top:4px;accent-color:var(--pizarra)}
+.check{display:flex;gap:11px;align-items:flex-start;text-transform:none;letter-spacing:0;font-weight:400;font-size:.84rem;color:var(--botella);margin-top:6px}
+.check input{width:18px;height:18px;flex:0 0 auto;margin-top:3px;accent-color:var(--pizarra)}.check a{color:var(--pizarra)}
+.actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;border:1.5px solid var(--greda);border-radius:999px;background:var(--greda);color:var(--harina);padding:12px 24px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .18s,border-color .18s}
+.btn:hover{background:#B85F47;border-color:#B85F47}.btn:disabled{opacity:.6;cursor:not-allowed}
+.btn.secondary{background:transparent;color:var(--pizarra);border-color:var(--pizarra)}.btn.secondary:hover{background:var(--loza-60)}
+.step-count{font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--botella)}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.hp input{display:none}
+
+/* Éxito: charlas con miniatura */
+.success{display:none}.success.show{display:block}
+.success-mark{width:52px;height:52px;border-radius:50%;background:var(--loza-60);color:var(--pizarra);display:grid;place-items:center;font-size:1.5rem;font-weight:700;margin-bottom:18px}
+.success .kick{margin-bottom:10px}.success h2{font-size:clamp(1.9rem,2.8vw,2.4rem)}
+.code{display:inline-flex;margin:12px 0 16px;background:var(--loza-60);color:var(--pizarra);padding:8px 12px;border-radius:8px;font-weight:600;font-size:.88rem;font-variant-numeric:tabular-nums}
+.success p{color:var(--botella)}
+.charlas-t{margin:24px 0 12px;padding-top:20px;border-top:1px solid var(--loza);font-weight:600;color:var(--pizarra)}
+.charlas{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
+.charlas a{display:flex;gap:14px;align-items:center;padding:8px;border:1px solid var(--loza);border-radius:12px;text-decoration:none;transition:background .18s,border-color .18s}
+.charlas a:hover{background:var(--loza-60);border-color:var(--botella)}
+.charlas img{width:112px;height:63px;object-fit:cover;border-radius:8px;flex:0 0 auto}
+.charlas b{display:block;font-weight:600;color:var(--pizarra);line-height:1.3;font-size:.95rem}.charlas small{display:block;color:var(--botella);font-size:.8rem;margin-top:3px}
+
+/* Franja de datos en Carbón */
+.datos-fila{background:var(--carbon);color:var(--harina)}
+.datos-fila dl{display:grid;grid-template-columns:repeat(4,1fr);margin:0}
+.datos-fila dl>div{padding:24px 24px 26px 0}.datos-fila dl>div+div{padding-left:24px;border-left:1px solid rgba(206,217,217,.16)}
+.datos-fila dt{font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--greda);margin-bottom:8px}.datos-fila dd{margin:0;font-size:15.5px;color:var(--harina)}
+
+/* Secciones */
+.sec{padding:clamp(64px,8vw,104px) 0}.sec-loza{background:var(--loza-60)}
+.sec-split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.h-sec{font-weight:600;font-size:clamp(30px,4vw,48px);letter-spacing:-.03em;margin:0}
+.sec-lede{color:var(--botella);font-size:1.05rem;max-width:58ch}.sec-lede+.sec-lede{margin-top:14px}.sec-lede strong{color:var(--pizarra)}
+.pasos{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pasos li{background:var(--harina);border-radius:16px;padding:28px}.pasos .n{display:block;font-weight:300;font-size:48px;line-height:1;color:var(--greda);margin-bottom:18px}
+.pasos h3{font-weight:600;font-size:1.15rem;margin-bottom:8px}.pasos p{margin:0;color:var(--botella)}
+.beneficios{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.beneficios li{border-top:2px solid var(--pizarra);padding-top:18px}.beneficios li:first-child{border-top-color:var(--greda)}
+.beneficios h3{font-weight:600;font-size:1.15rem;margin-bottom:8px}.beneficios p{margin:0;color:var(--botella)}
+
+/* Pie en Carbón */
+footer{background:var(--carbon);color:var(--loza);padding:40px 0}
+.f-in{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}.f-in img{height:44px;width:auto}
+.f-firma{font-weight:600;color:var(--harina)}.f-in nav{display:flex;flex-wrap:wrap;gap:10px 24px}.f-in nav a{color:var(--loza);text-decoration:none;font-size:.9rem;min-height:44px;display:inline-flex;align-items:center}.f-in nav a:hover{color:var(--harina)}
+
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr}.form-card{max-width:680px}.sec-split{grid-template-columns:1fr}.pasos,.beneficios{grid-template-columns:1fr}}
+@media(max-width:880px){.nav-links{display:none}.nav .m-btn{margin-left:auto}.nav-in{height:66px;padding-left:18px}.nav .logo{height:42px}.hero{padding-top:112px}
+  .datos-fila dl{grid-template-columns:1fr 1fr}.datos-fila dl>div:nth-child(3){padding-left:0;border-left:0}.datos-fila dl>div:nth-child(n+3){border-top:1px solid rgba(206,217,217,.16)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-card{padding:22px 18px;border-radius:16px}.actions{align-items:stretch;flex-direction:column-reverse}.actions .btn{width:100%}.step-count{text-align:center}.charlas img{width:92px;height:52px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress span,.btn,.m-btn{transition:none}}
+
+/* Recuadro de origen y sección en tono oscuro (Pizarra) */
+.origen{background:var(--pizarra);border:1px solid var(--pizarra)}.origen strong{color:var(--harina)}.origen span{color:var(--loza)}
+.sec-oscura{background:var(--pizarra);color:var(--harina)}.sec-oscura .h-sec{color:var(--harina)}.sec-oscura .kick{color:var(--loza)}.sec-oscura .sec-lede{color:var(--loza);margin-bottom:26px}
+[hidden]{display:none!important}.recursos a{text-decoration:none;display:block}.recursos a:hover b{text-decoration:underline}
+.recursos{list-style:none;margin:52px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.recursos img{width:100%;height:auto;border-radius:12px;margin-bottom:14px;box-shadow:0 0 0 1px rgba(206,217,217,.22)}
+.recursos b{display:block;font-weight:600;color:var(--harina);line-height:1.3}.recursos small{display:block;color:var(--loza);font-size:.85rem;margin-top:4px}
+@media(max-width:980px){.recursos{grid-template-columns:1fr 1fr}}@media(max-width:560px){.recursos{grid-template-columns:1fr}}
+
+/* Beneficios como tarjetas Harina sobre la sección Loza */
+.beneficios li{background:var(--harina);border:1px solid var(--loza);border-top:1px solid var(--loza);border-radius:16px;padding:28px 28px 30px;box-shadow:0 14px 34px -22px rgba(35,52,53,.35)}
+.beneficios li:first-child{border-top-color:var(--loza)}
+.beneficios li::before{content:"";display:block;width:32px;height:3px;border-radius:2px;background:var(--greda);margin-bottom:20px}
+</style>
+<style>
+.ok-hero{background:var(--pizarra);color:var(--harina);padding:150px 0 76px}
+.ok-hero .wrap{max-width:var(--ancho)}
+.ok-mark{width:60px;height:60px;border-radius:50%;background:var(--greda);color:var(--carbon);display:grid;place-items:center;font-size:1.7rem;font-weight:700;margin-bottom:26px}
+.ok-hero .kick{color:var(--loza)}.ok-hero h1{color:var(--harina);font-weight:500;font-size:clamp(40px,5.4vw,68px);letter-spacing:-.035em;margin:0 0 20px}
+.ok-hero .lede{color:var(--loza);max-width:56ch}
+.ok-code{display:inline-flex;margin-top:26px;background:rgba(206,217,217,.12);border:1px solid rgba(206,217,217,.24);color:var(--harina);padding:9px 14px;border-radius:10px;font-weight:600;font-size:.92rem;font-variant-numeric:tabular-nums}
+.ok-rec .h-sec{margin-bottom:14px}.ok-rec .sec-lede{margin-bottom:0}
+.ok-rec .recursos b{color:var(--pizarra)}.ok-rec .recursos small{color:var(--botella)}.ok-rec .recursos img{box-shadow:0 0 0 1px var(--loza)}
+.ok-sig{background:var(--loza-60)}
+@media(max-width:880px){.ok-hero{padding-top:110px}}
+.ok-hero{position:relative;overflow:hidden;isolation:isolate;padding:132px 0 0}
+.ok-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;max-width:var(--ancho)}
+.ok-txt{padding-bottom:clamp(56px,7vw,96px);align-self:center}
+.ok-acciones{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:30px}.ok-acciones .ok-code{margin-top:0}
+/* Fachada dibujada (misma máscara que la home), en Loza translúcido para el fondo oscuro */
+.calle{position:absolute;z-index:-1;left:30%;right:-34%;bottom:0;aspect-ratio:2064/512;pointer-events:none;transform:scaleX(-1);background:rgba(206,217,217,.22);
+  -webkit-mask-image:url(/assets/marca/fachada-ia-mascara.webp),linear-gradient(0deg,transparent 0%,#000 30%);-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat;-webkit-mask-composite:source-in;
+  mask-image:url(/assets/marca/fachada-ia-mascara.webp),linear-gradient(0deg,transparent 0%,#000 30%);mask-size:100% 100%;mask-repeat:no-repeat;mask-composite:intersect}
+.ok-art{position:relative;display:flex;justify-content:flex-end;align-self:end}
+.ok-art .recorte{display:block;width:auto;height:min(68vh,560px);max-width:100%;object-fit:contain;filter:saturate(.9) drop-shadow(0 24px 30px rgba(0,0,0,.35))}
+.flota{position:absolute;left:4%;bottom:14%;display:flex;align-items:center;gap:14px;background:var(--harina);color:var(--carbon);text-decoration:none;padding:14px 20px 14px 16px;border-radius:18px;box-shadow:0 18px 40px -18px rgba(0,0,0,.6);transition:transform .2s ease}
+.flota:hover{transform:translateY(-3px)}.flota img{height:30px;width:auto}.flota b{display:block;font-weight:600;font-size:16px}.flota small{display:block;font-size:12.5px;color:var(--botella);margin-top:2px}.flota .fl{color:var(--greda);font-weight:700;margin-left:6px}
+@media(max-width:960px){.ok-grid{grid-template-columns:1fr;gap:0}.ok-txt{padding-bottom:36px}.ok-art{justify-content:center}.ok-art .recorte{height:auto;width:min(86%,420px)}.flota{left:0;bottom:10%}.calle{left:-20%;right:-60%}}
+.ok-acciones{flex-direction:column;align-items:flex-start;gap:14px}.ok-code{white-space:nowrap;font-weight:500;font-size:.85rem;padding:7px 12px}
+.ok-pill{display:inline-flex;align-items:center;gap:10px;background:var(--greda);color:var(--harina);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:10px 18px 10px 12px;border-radius:999px;margin:0 0 24px}
+.ok-pill span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--harina);color:var(--greda);box-shadow:inset 0 0 0 1px rgba(24,29,26,.08)}.ok-pill svg{display:block}
+.ok-acciones .flota{position:static}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Principal">
+  <div class="nav-in">
+    <a href="https://pactopyme.cl/" aria-label="Pacto Pyme, inicio"><img class="logo" src="/assets/pactopyme-imagotipo-carbon.svg" alt="Pacto Pyme" width="106" height="50"></a>
+    <div class="nav-links">
+      <a href="/mineconomia/#como-funciona">Cómo funciona</a>
+      <a href="/mineconomia/#comunidad">La comunidad</a>
+      <a href="https://pactopyme.cl/">Conocer Pacto Pyme</a>
+    </div>
+    <a class="m-btn" href="#recursos">Ver recursos</a>
+  </div>
+</nav>
+<main>
+  <section class="ok-hero"><div class="calle" aria-hidden="true"></div><div class="wrap ok-grid">
+    <div class="ok-txt">
+      <p class="ok-pill"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M5 12.6l4.5 4.4L19 7.6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Registro completado</p>
+      <h1>Tu pyme ya es parte.</h1>
+      <p class="lede">Guardamos tu información. Pronto abriremos cursos sincrónicos para las pymes seleccionadas y te contactaremos cuando haya una convocatoria pertinente para tu empresa.</p>
+      <div class="ok-acciones"><a class="flota" href="#recursos"><img src="/assets/pactopyme-faio-isotipo-greda.svg" alt="" aria-hidden="true" width="21" height="28"><span><b>Recursos gratuitos</b><small>4 recursos asincrónicos con guía</small></span><span class="fl" aria-hidden="true">↓</span></a><span class="ok-code" id="codigo" hidden></span></div>
+    </div>
+    <div class="ok-art">
+      <img class="recorte" src="/assets/marca/foodtruck-recorte.webp" width="1045" height="1286" fetchpriority="high" decoding="async" alt="Una mujer y un hombre con delantal, socios de un food truck, sonriendo frente a la cámara.">
+    </div>
+  </div></section>
+
+  <section class="sec ok-rec" id="recursos"><div class="wrap">
+    <div class="sec-split">
+      <div><h2 class="h-sec">Recursos gratuitos para potenciar tu pyme con IA.</h2></div>
+      <p class="sec-lede">Es nuestro regalo para que tu pyme dé el siguiente paso con IA. Revisa estos recursos asincrónicos cuando quieras y descarga sus guías: traen el paso a paso, ejemplos para tu negocio y plantillas listas para usar.</p>
+    </div>
+    <ul class="recursos"><li><a href="/mineconomia/recursos/estrategias-ia/"><img src="/mineconomia/recursos/estrategias-ia/miniatura.jpg" alt="" width="640" height="360" loading="lazy"><b>IA: estrategias transformadoras para negocios</b><small>Recurso asincrónico · 77 min · guía en PDF</small></a></li><li><a href="/mineconomia/recursos/tareas-repetitivas/"><img src="/mineconomia/recursos/tareas-repetitivas/miniatura.jpg" alt="" width="640" height="360" loading="lazy"><b>El fin de las tareas repetitivas</b><small>Recurso asincrónico · 78 min · guía en PDF</small></a></li><li><a href="/mineconomia/recursos/primer-agente-ia/"><img src="/mineconomia/recursos/primer-agente-ia/miniatura.jpg" alt="" width="640" height="360" loading="lazy"><b>Aprende a crear tu primer agente de IA</b><small>Recurso asincrónico · 72 min · guía en PDF</small></a></li><li><a href="/mineconomia/recursos/automatiza/"><img src="/mineconomia/recursos/automatiza/miniatura.jpg" alt="" width="640" height="360" loading="lazy"><b>Más productividad, menos esfuerzo: automatiza</b><small>Recurso asincrónico · 63 min · guía en PDF</small></a></li></ul>
+  </div></section>
+
+  <section class="sec ok-sig"><div class="wrap sec-split">
+    <div><p class="kick">Lo que sigue</p><h2 class="h-sec">Te avisamos cuando haya una convocatoria para ti.</h2></div>
+    <p class="sec-lede">Usamos tu nivel en Chequeo Digital y tu principal desafío para ofrecerte oportunidades que tengan sentido para tu negocio.</p>
+  </div></section>
+</main>
+<footer><div class="wrap f-in">
+  <a href="https://pactopyme.cl/" aria-label="Pacto Pyme, inicio"><img src="/assets/pactopyme-imagotipo-harina.svg" alt="Pacto Pyme" width="94" height="44"></a>
+  <span class="f-firma">Si las pymes crecen, Chile crece.</span>
+  <nav aria-label="Enlaces legales"><a href="https://pactopyme.cl/">Sitio principal</a><a href="https://pactopyme.cl/politica-de-privacidad.html">Privacidad</a><a href="mailto:contacto@pactopyme.cl">Contacto</a></nav>
+</div></footer>
+<script>
+// Muestra el código de registro que llega en la URL (?c=PP-...)
+(function(){var c=new URLSearchParams(location.search).get('c');if(c&&/^PP-[A-Z0-9-]{4,40}$/.test(c)){var el=document.getElementById('codigo');el.textContent='Código de registro: '+c;el.hidden=false;}})();
+</script>
+</body>
+</html>
